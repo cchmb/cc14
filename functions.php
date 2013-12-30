@@ -48,14 +48,6 @@ add_theme_support( 'custom-header', array(
 //* Add support for custom background
 add_theme_support( 'custom-background' );
 
-//* Add support for additional color style options
-add_theme_support( 'genesis-style-selector', array(
-	'outreach-pro-blue' 	=>	__( 'Outreach Pro Blue', 'outreach' ),
-	'outreach-pro-orange' 	=> 	__( 'Outreach Pro Orange', 'outreach' ),
-	'outreach-pro-purple' 	=> 	__( 'Outreach Pro Purple', 'outreach' ),
-	'outreach-pro-red' 		=> 	__( 'Outreach Pro Red', 'outreach' ),
-) );
-
 //* Add support for structural wraps
 add_theme_support( 'genesis-structural-wraps', array(
 	'header',
