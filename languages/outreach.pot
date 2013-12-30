@@ -1,86 +1,84 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Going Green Child Theme for Genesis Framework\n"
+"Project-Id-Version: News Pro Theme for Genesis Framework\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-06 21:51-0500\n"
+"POT-Creation-Date: 2013-12-29 16:38-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions.php:39
-msgid "Blue"
+#: functions.php:9
+msgid "Outreach Pro Theme"
 msgstr ""
 
-#: functions.php:40
-msgid "Orange"
+#: functions.php:53
+msgid "Outreach Pro Blue"
 msgstr ""
 
-#: functions.php:41
-msgid "Red"
+#: functions.php:54
+msgid "Outreach Pro Orange"
 msgstr ""
 
-#: functions.php:95
-msgid "Top"
+#: functions.php:55
+msgid "Outreach Pro Purple"
 msgstr ""
 
-#: functions.php:101
-msgid "Home Featured"
+#: functions.php:56
+msgid "Outreach Pro Red"
 msgstr ""
 
-#: functions.php:102
-msgid "This is the home featured section."
+#: functions.php:84
+msgid "Continue Reading"
 msgstr ""
 
-#: functions.php:106
-msgid "Home #1"
+#: functions.php:148
+msgid "Home - Top"
 msgstr ""
 
-#: functions.php:107
-msgid "This is the home #1 section."
+#: functions.php:149
+msgid "This is the top section of the Home page."
 msgstr ""
 
-#: functions.php:111
-msgid "Home #2"
+#: functions.php:153
+msgid "Home - Bottom"
 msgstr ""
 
-#: functions.php:112
-msgid "This is the home #3 section."
+#: functions.php:154
+msgid "This is the bottom section of the Home page."
 msgstr ""
 
-#: functions.php:116
-msgid "Home #3"
+#: functions.php:158
+msgid "After Entry"
 msgstr ""
 
-#: functions.php:117 functions.php:122
-msgid "This is the home #4 section."
+#: functions.php:159
+msgid "This is the after entry widget area."
 msgstr ""
 
-#: functions.php:121
-msgid "Home #4"
+#: functions.php:163
+msgid "Sub Footer - Left"
 msgstr ""
 
-#: functions.php:126
-msgid "Sub Footer Left"
+#: functions.php:164
+msgid "This is the left section of the sub footer."
 msgstr ""
 
-#: functions.php:127
-msgid "This is the sub footer left section."
+#: functions.php:168
+msgid "Sub Footer - Right"
 msgstr ""
 
-#: functions.php:131
-msgid "Sub Footer Right"
-msgstr ""
-
-#: functions.php:132
-msgid "This is the sub footer right section."
+#: functions.php:169
+msgid "This is the right section of the sub footer."
 msgstr ""
