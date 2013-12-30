@@ -367,7 +367,6 @@ input[type="submit"],
 .button {
 	background-color: #6ab446;
 	border: none;
-	border-radius: 3px;
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
@@ -484,7 +483,6 @@ Structure and Layout
 
 .content {
 	background-color: #fff;
-	border-radius: 3px;
 	float: right;
 	margin-bottom: 30px;
 	margin-bottom: 3rem;
@@ -1601,7 +1599,6 @@ Sidebars
 
 .sidebar .widget {
 	background-color: #111;
-	border-radius: 3px;
 	padding: 30px;
 	padding: 3rem;
 }
