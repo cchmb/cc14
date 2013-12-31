@@ -1974,3 +1974,9 @@ Custom
 		max-width: 100%;
 	}
 }
+
+.widget.sermon-series time {
+	display: block;
+	font-size: 80%;
+	color: #999;
+}
