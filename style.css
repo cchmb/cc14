@@ -1580,15 +1580,6 @@ Sidebars
 	padding: 3rem;
 }
 
-.sidebar li a {
-	color: #ccc;
-}
-
-.sidebar li a:hover,
-.sidebar .entry-meta a:hover {
-	color: #fff;
-}
-
 /*
 Sub Footer
 ---------------------------------------------------------------------------------------------------- */
