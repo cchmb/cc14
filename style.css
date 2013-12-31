@@ -1962,3 +1962,24 @@ Media Queries
 	}
 
 }
+
+
+/*
+Custom
+---------------------------------------------------------------------------------------------------- */
+
+
+.google-map {
+	border: 1px solid #ddd;
+	float: right;
+	max-width: 50%;
+	padding: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+	.google-map {
+		float: none;
+		margin: 1em 0;
+		max-width: 100%;
+	}
+}
