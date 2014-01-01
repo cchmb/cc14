@@ -1945,7 +1945,8 @@ Media Queries
 
 	.home-bottom .widget:nth-of-type(2n),
 	.home-bottom .widget {
-		margin: 0;
+		margin-left: 0;
+		margin-right: 0;
 		width: 100%;
 	}
 	
