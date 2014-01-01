@@ -1987,8 +1987,7 @@ Custom
 	color: #999;
 }
 
-.sermon_video {
-	margin-bottom: 1em;
+.sermon_video > .wrap {
 	position: relative;
 	padding-bottom: 56.25%; /* 9 / 16 */
 	padding-top: 30px;
@@ -1996,7 +1995,7 @@ Custom
 	overflow: hidden;
 }
 
-.sermon_video iframe {
+.sermon_video > .wrap iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
