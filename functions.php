@@ -165,3 +165,8 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Sermon Sidebar - Right', 'outreach' ),
 	'description' => __( 'This is the right section of Sermon pages.', 'outreach' ),
 ) );
+genesis_register_sidebar( array(
+	'id'          => 'about-bottom',
+	'name'        => __( 'About - Bottom', 'outreach' ),
+	'description' => __( 'This is the bottom section of the About page.', 'outreach' ),
+) );
