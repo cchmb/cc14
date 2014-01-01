@@ -1980,7 +1980,8 @@ Custom
 	}
 }
 
-.widget.sermon-series time {
+.widget_sermons_in_series .post-date,
+.widget_recent_sermons .post-date {
 	display: block;
 	font-size: 80%;
 	color: #999;
