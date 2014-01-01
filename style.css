@@ -1906,6 +1906,7 @@ Media Queries
 	}
 
 	.genesis-nav-menu li.right {
+		display: block;
 		float: none;
 	}
 	
