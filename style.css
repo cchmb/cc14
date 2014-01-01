@@ -224,25 +224,22 @@ li {
 	list-style-type: none;
 }
 
-blockquote,
-blockquote::before {
-	color: #999;
-}
-
 blockquote {
+	color: #777;
 	margin: 40px;
 	margin: 4rem;
 }
 
 blockquote::before {
+	color: #ddd;
 	content: "\201C";
 	display: block;
-	font-size: 30px;
-	font-size: 3rem;
+	font-size: 50px;
+	font-size: 5rem;
 	height: 0;
-	left: -20px;
+	left: -25px;
 	position: relative;
-	top: -10px;
+	top: -20px;
 }
 
 cite {
