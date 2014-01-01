@@ -13,43 +13,47 @@ function outreach_sermon_genesis_meta() {
 	}
 
 	//* Remove post-meta
-	add_filter('genesis_post_meta', '__return_empty_string' );
+	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 	//* Use custom entry content
 	remove_filter('the_content', 'mbsb_provide_content');
-	add_filter('the_content', 'outreach_sermon_content');
+	add_filter('genesis_entry_content', 'outreach_sermon_media');
 }
 
 function outreach_sermon_right_sidebar() {
 	genesis_widget_area( 'sermon-right', array() );
 }
 
-function outreach_sermon_content($content) {
+function outreach_sermon_media() {
 		global $post;
 		$sermon = new mbsb_sermon($post->ID);
-		$description = $content;
 
 		foreach ($sermon->attachments->get_attachments() as $k => $attachment) {
 				if (strstr($attachment->get_url(), 'youtube.com') !== false) {
-						parse_str( parse_url( $attachment->get_url(), PHP_URL_QUERY ) );
-						if ($v) {
-								$video = '<div class="wrap"><iframe src="//www.youtube.com/embed/'. $v .'" frameborder="0" allowfullscreen></iframe></div>';
-								$video .= '<p class="download_link"><a href="' . $attachment->get_url() . '">Watch on YouTube</a></p>';
-						}
+					$video = $attachment;
 				} else if (substr($attachment->get_mime_type(), 0, 5) == "audio") {
-						$audio = do_shortcode('[audio src="' . $attachment->get_url() . '"]');
-						$audio .= '<p class="download_link"><a href="' . $attachment->get_url() . '">Download audio file</a></p>';
+					$audio = $attachment;
 				}
 		}
 
 		if ($video) {
-				$content .= '<section class="sermon_video">'.$video.'</section>';
+			parse_str( parse_url( $attachment->get_url(), PHP_URL_QUERY ) );
+			if ($v) { ?>
+	<section class="sermon_video">
+		<div class="wrap">
+			<iframe src="//www.youtube.com/embed/<?php esc_attr_e($v) ?>" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<p class="download_link"><a href="<?php esc_attr_e($video->get_url()) ?>">Watch on YouTube</a></p>
+	</section>
+			<?php }
 		}
-		$content .= '<section class="sermon_audio"><h3>Audio only</h3>'.$audio.'</section>';
 
-		$content .= $widgets;
-
-		return $content;
+		if ($audio) { ?>
+			<section class="sermon_audio"><h3>Audio only</h3>
+				<?php echo do_shortcode('[audio src="' . $audio->get_url() . '"]'); ?>
+				<p class="download_link"><a href="<?php esc_attr_e($audio->get_url()) ?>">Download audio file</a></p>
+			</section>
+		<?php }
 }
 
 genesis();
