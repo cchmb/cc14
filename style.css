@@ -1934,9 +1934,12 @@ Media Queries
 
 @media only screen and (max-width: 480px) {
 
+	.site-inner {
+		padding-top: 5%;
+	}
+
 	.content {
-		padding: 30px;
-		padding: 3rem;
+		padding: 5%;
 	}
 	
 	.content #genesis-responsive-slider .flex-control-nav {
