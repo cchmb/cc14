@@ -1912,14 +1912,6 @@ Media Queries
 		padding: 1.4rem 0;
 	}
 
-	.responsive-menu {
-		display: none;
-	}
-	
-	#responsive-menu-icon {
-		display: block;
-	}
-	
 	.entry-categories,
 	.entry-comments-link,
 	.entry-tags {
@@ -1930,6 +1922,14 @@ Media Queries
 }
 
 @media only screen and (max-width: 480px) {
+
+	.responsive-menu {
+		display: none;
+	}
+
+	#responsive-menu-icon {
+		display: block;
+	}
 
 	.site-inner {
 		padding-top: 5%;
