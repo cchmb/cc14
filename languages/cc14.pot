@@ -19,26 +19,6 @@ msgstr ""
 "X-Generator: Poedit 1.6.3\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions.php:9
-msgid "Outreach Pro Theme"
-msgstr ""
-
-#: functions.php:53
-msgid "Outreach Pro Blue"
-msgstr ""
-
-#: functions.php:54
-msgid "Outreach Pro Orange"
-msgstr ""
-
-#: functions.php:55
-msgid "Outreach Pro Purple"
-msgstr ""
-
-#: functions.php:56
-msgid "Outreach Pro Red"
-msgstr ""
-
 #: functions.php:84
 msgid "Continue Reading"
 msgstr ""

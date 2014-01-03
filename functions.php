@@ -3,12 +3,11 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 //* Set Localization (do not remove)
-load_child_theme_textdomain( 'outreach', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'outreach' ) );
+load_child_theme_textdomain( 'cc14', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'cc14' ) );
 
 //* Child theme (do not remove)
-define( 'CHILD_THEME_NAME', __( 'Outreach Pro Theme', 'outreach' ) );
-define( 'CHILD_THEME_URL', 'http://my.studiopress.com/themes/outreach/' );
-define( 'CHILD_THEME_VERSION', '3.0.0' );
+define( 'CHILD_THEME_NAME', __( 'Calvary Chapel HMB 2014', 'cc14' ) );
+define( 'CHILD_THEME_URL', 'http://www.cchmb.org/' );
 
 //* Add HTML5 markup structure
 add_theme_support( 'html5' );
@@ -17,18 +16,18 @@ add_theme_support( 'html5' );
 add_theme_support( 'genesis-responsive-viewport' );
 
 //* Enqueue Google fonts
-add_action( 'wp_enqueue_scripts', 'outreach_google_fonts' );
-function outreach_google_fonts() {
+add_action( 'wp_enqueue_scripts', 'cc14_google_fonts' );
+function cc14_google_fonts() {
 
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:400,700', array(), CHILD_THEME_VERSION );
 	
 }
 
 //* Enqueue Responsive Menu Script
-add_action( 'wp_enqueue_scripts', 'outreach_enqueue_responsive_script' );
-function outreach_enqueue_responsive_script() {
+add_action( 'wp_enqueue_scripts', 'cc14_enqueue_responsive_script' );
+function cc14_enqueue_responsive_script() {
 
-	wp_enqueue_script( 'outreach-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'cc14-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
 
 }
 
@@ -62,8 +61,8 @@ add_theme_support( 'genesis-structural-wraps', array(
 add_theme_support( 'genesis-footer-widgets', 4 );
 
 //* Set Genesis Responsive Slider defaults
-add_filter( 'genesis_responsive_slider_settings_defaults', 'outreach_responsive_slider_defaults' );
-function outreach_responsive_slider_defaults( $defaults ) {
+add_filter( 'genesis_responsive_slider_settings_defaults', 'cc14_responsive_slider_defaults' );
+function cc14_responsive_slider_defaults( $defaults ) {
 
 	$args = array(
 		'location_horizontal'             => 'Left',
@@ -73,7 +72,7 @@ function outreach_responsive_slider_defaults( $defaults ) {
 		'slideshow_excerpt_content'       => 'full',
 		'slideshow_excerpt_width'         => '35',
 		'slideshow_height'                => '460',
-		'slideshow_more_text'             => __( 'Continue Reading', 'outreach' ),
+		'slideshow_more_text'             => __( 'Continue Reading', 'cc14' ),
 		'slideshow_title_show'            => 1,
 		'slideshow_width'                 => '1140',
 	);
@@ -84,8 +83,8 @@ function outreach_responsive_slider_defaults( $defaults ) {
 }
 
 //* Hook after post widget after the entry content
-add_action( 'genesis_after_entry', 'outreach_after_entry', 5 );
-function outreach_after_entry() {
+add_action( 'genesis_after_entry', 'cc14_after_entry', 5 );
+function cc14_after_entry() {
 
 	if ( is_singular( 'post' ) )
 		genesis_widget_area( 'after-entry', array(
@@ -96,8 +95,8 @@ function outreach_after_entry() {
 }
 
 //* Modify the size of the Gravatar in the author box
-add_filter( 'genesis_author_box_gravatar_size', 'outreach_author_box_gravatar_size' );
-function outreach_author_box_gravatar_size( $size ) {
+add_filter( 'genesis_author_box_gravatar_size', 'cc14_author_box_gravatar_size' );
+function cc14_author_box_gravatar_size( $size ) {
 
     return '80';
     
@@ -113,8 +112,8 @@ function mpp_remove_comment_form_allowed_tags( $defaults ) {
 }
 
 //* Add the sub footer section
-add_action( 'genesis_before_footer', 'outreach_sub_footer', 5 );
-function outreach_sub_footer() {
+add_action( 'genesis_before_footer', 'cc14_sub_footer', 5 );
+function cc14_sub_footer() {
 
 	if ( is_active_sidebar( 'sub-footer-left' ) || is_active_sidebar( 'sub-footer-right' ) ) {
 		echo '<div class="sub-footer"><div class="wrap">';
@@ -134,44 +133,44 @@ function outreach_sub_footer() {
 	
 }
 
-add_action( 'init', 'outreach_cleanup_hooks', 99 );
-function outreach_cleanup_hooks() {
+add_action( 'init', 'cc14_cleanup_hooks', 99 );
+function cc14_cleanup_hooks() {
     remove_action ('wp_head', 'mbsb_enqueue_frontend_scripts_and_styles');
 }
 
 //* Register widget areas
 genesis_register_sidebar( array(
 	'id'          => 'home-top',
-	'name'        => __( 'Home - Top', 'outreach' ),
-	'description' => __( 'This is the top section of the Home page.', 'outreach' ),
+	'name'        => __( 'Home - Top', 'cc14' ),
+	'description' => __( 'This is the top section of the Home page.', 'cc14' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-bottom',
-	'name'        => __( 'Home - Bottom', 'outreach' ),
-	'description' => __( 'This is the bottom section of the Home page.', 'outreach' ),
+	'name'        => __( 'Home - Bottom', 'cc14' ),
+	'description' => __( 'This is the bottom section of the Home page.', 'cc14' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'after-entry',
-	'name'        => __( 'After Entry', 'outreach' ),
-	'description' => __( 'This is the after entry widget area.', 'outreach' ),
+	'name'        => __( 'After Entry', 'cc14' ),
+	'description' => __( 'This is the after entry widget area.', 'cc14' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'sub-footer-left',
-	'name'        => __( 'Sub Footer - Left', 'outreach' ),
-	'description' => __( 'This is the left section of the sub footer.', 'outreach' ),
+	'name'        => __( 'Sub Footer - Left', 'cc14' ),
+	'description' => __( 'This is the left section of the sub footer.', 'cc14' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'sub-footer-right',
-	'name'        => __( 'Sub Footer - Right', 'outreach' ),
-	'description' => __( 'This is the right section of the sub footer.', 'outreach' ),
+	'name'        => __( 'Sub Footer - Right', 'cc14' ),
+	'description' => __( 'This is the right section of the sub footer.', 'cc14' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'sermon-right',
-	'name'        => __( 'Sermon Sidebar - Right', 'outreach' ),
-	'description' => __( 'This is the right section of Sermon pages.', 'outreach' ),
+	'name'        => __( 'Sermon Sidebar - Right', 'cc14' ),
+	'description' => __( 'This is the right section of Sermon pages.', 'cc14' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'about-bottom',
-	'name'        => __( 'About - Bottom', 'outreach' ),
-	'description' => __( 'This is the bottom section of the About page.', 'outreach' ),
+	'name'        => __( 'About - Bottom', 'cc14' ),
+	'description' => __( 'This is the bottom section of the About page.', 'cc14' ),
 ) );

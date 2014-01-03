@@ -1,7 +1,7 @@
 <?php
 
-add_action( 'genesis_meta', 'outreach_sermon_genesis_meta' );
-function outreach_sermon_genesis_meta() {
+add_action( 'genesis_meta', 'cc14_sermon_genesis_meta' );
+function cc14_sermon_genesis_meta() {
 
 	if ( is_active_sidebar( 'sermon-right' ) ) {
 		//* Force content-sidebar layout setting
@@ -9,7 +9,7 @@ function outreach_sermon_genesis_meta() {
 
 		//* Display sermon sidebar instead of primary
 		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-		add_action( 'genesis_sidebar', 'outreach_sermon_right_sidebar' );
+		add_action( 'genesis_sidebar', 'cc14_sermon_right_sidebar' );
 	}
 
 	//* Remove post-meta
@@ -17,14 +17,14 @@ function outreach_sermon_genesis_meta() {
 
 	//* Use custom entry content
 	remove_filter('the_content', 'mbsb_provide_content');
-	add_filter('genesis_entry_content', 'outreach_sermon_media');
+	add_filter('genesis_entry_content', 'cc14_sermon_media');
 }
 
-function outreach_sermon_right_sidebar() {
+function cc14_sermon_right_sidebar() {
 	genesis_widget_area( 'sermon-right', array() );
 }
 
-function outreach_sermon_media() {
+function cc14_sermon_media() {
 		global $post;
 		$sermon = new mbsb_sermon($post->ID);
 

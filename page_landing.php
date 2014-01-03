@@ -1,9 +1,9 @@
 <?php
 /**
- * This file adds the Landing template to the Outreach Pro Theme.
+ * This file adds the Landing template to the CC14 Theme.
  *
  * @author StudioPress
- * @package Outreach Pro
+ * @package CC14
  * @subpackage Customizations
  */
 
@@ -12,10 +12,10 @@ Template Name: Landing
 */
 
 //* Add custom body class to the head
-add_filter( 'body_class', 'outreach_add_body_class' );
-function outreach_add_body_class( $classes ) {
+add_filter( 'body_class', 'cc14_add_body_class' );
+function cc14_add_body_class( $classes ) {
 
-   $classes[] = 'outreach-pro-landing';
+   $classes[] = 'cc14-landing';
    return $classes;
    
 }
@@ -36,7 +36,7 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
 //* Remove sub-footer widgets
-remove_action( 'genesis_before_footer', 'outreach_sub_footer', 5 );
+remove_action( 'genesis_before_footer', 'cc14_sub_footer', 5 );
 
 //* Remove site footer widgets
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );

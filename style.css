@@ -1,10 +1,7 @@
 /*
-	Theme Name: Outreach Pro (customized for CCHMB)
-	Theme URI: http://my.studiopress.com/themes/outreach/
-	Description: A mobile responsive and HTML5 theme built for the Genesis Framework. This theme has been further customized for Calvary Chapel Half Moon Bay.
-	Author: StudioPress
-	Author URI: http://www.studiopress.com/
-	Version: 3.0.0
+	Theme Name: CC14
+	Theme URI: http://www.cchmb.org/
+	Description: A mobile responsive and HTML5 theme built for the Genesis Framework. This is a modified version of the Outreach Pro theme by StudioPress
 	
 	Tags: black, green, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 	
@@ -442,12 +439,12 @@ Structure and Layout
 	padding-top: 3rem;
 }
 
-.outreach-pro-home .site-inner {
+.cc14-home .site-inner {
 	padding: 30px 0;
 	padding: 3rem 0;
 }
 
-.outreach-pro-landing .wrap {
+.cc14-landing .wrap {
 	max-width: 900px;
 }
 
@@ -484,7 +481,7 @@ Structure and Layout
 	width: 760px;
 }
 
-.outreach-pro-home .content {
+.cc14-home .content {
 	margin: 0;
 }
 
@@ -1329,7 +1326,7 @@ Content Area
 	padding: 0;
 }
 
-.outreach-pro-home .content {
+.cc14-home .content {
 	padding: 0;
 }
 
@@ -1741,7 +1738,7 @@ Media Queries
 		width: 210px;
 	}
 	
-	.outreach-pro-home .site-inner .wrap {
+	.cc14-home .site-inner .wrap {
 		max-width: none;
 	}
 
@@ -1834,7 +1831,7 @@ Media Queries
 		padding-right: 5%;
 	}
 	
-	.outreach-pro-home .site-inner .wrap {
+	.cc14-home .site-inner .wrap {
 		padding: 0;
 	}
 	
