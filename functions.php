@@ -134,6 +134,11 @@ function outreach_sub_footer() {
 	
 }
 
+add_action( 'init', 'outreach_cleanup_hooks', 99 );
+function outreach_cleanup_hooks() {
+    remove_action ('wp_head', 'mbsb_enqueue_frontend_scripts_and_styles');
+}
+
 //* Register widget areas
 genesis_register_sidebar( array(
 	'id'          => 'home-top',
