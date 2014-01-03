@@ -16,10 +16,7 @@ function cc14_series_genesis_meta() {
 }
 
 function cc14_series_sidebar_widgets() {
-	genesis_widget_area( 'series-sidebar', array(
-		'before' => '<div class="series-sidebar widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
+	genesis_widget_area( 'series-sidebar', array() );
 }
 
 genesis();

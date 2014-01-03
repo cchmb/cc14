@@ -41,10 +41,7 @@ function cc14_preacher_sermons() {
 }
 
 function cc14_preacher_sidebar_widgets() {
-	genesis_widget_area( 'preacher-sidebar', array(
-		'before' => '<div class="preacher-sidebar widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
+	genesis_widget_area( 'preacher-sidebar', array() );
 }
 
 genesis();
