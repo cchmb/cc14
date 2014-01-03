@@ -18,17 +18,13 @@ add_theme_support( 'genesis-responsive-viewport' );
 //* Enqueue Google fonts
 add_action( 'wp_enqueue_scripts', 'cc14_google_fonts' );
 function cc14_google_fonts() {
-
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:400,700', array(), CHILD_THEME_VERSION );
-	
 }
 
 //* Enqueue Responsive Menu Script
 add_action( 'wp_enqueue_scripts', 'cc14_enqueue_responsive_script' );
 function cc14_enqueue_responsive_script() {
-
 	wp_enqueue_script( 'cc14-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
-
 }
 
 //* Add new image sizes
@@ -78,7 +74,7 @@ function cc14_responsive_slider_defaults( $defaults ) {
 	);
 
 	$args = wp_parse_args( $args, $defaults );
-	
+
 	return $args;
 }
 
@@ -99,13 +95,13 @@ add_filter( 'genesis_author_box_gravatar_size', 'cc14_author_box_gravatar_size' 
 function cc14_author_box_gravatar_size( $size ) {
 
     return '80';
-    
+
 }
 
 //* Remove comment form allowed tags
 add_filter( 'comment_form_defaults', 'mpp_remove_comment_form_allowed_tags' );
 function mpp_remove_comment_form_allowed_tags( $defaults ) {
-	
+
 	$defaults['comment_notes_after'] = '';
 	return $defaults;
 
@@ -117,25 +113,25 @@ function cc14_sub_footer() {
 
 	if ( is_active_sidebar( 'sub-footer-left' ) || is_active_sidebar( 'sub-footer-right' ) ) {
 		echo '<div class="sub-footer"><div class="wrap">';
-		
-		   genesis_widget_area( 'sub-footer-left', array(
-		       'before' => '<div class="sub-footer-left">',
-		       'after'  => '</div>',
-		   ) );
-	
-		   genesis_widget_area( 'sub-footer-right', array(
-		       'before' => '<div class="sub-footer-right">',
-		       'after'  => '</div>',
-		   ) );
-	
-		echo '</div><!-- end .wrap --></div><!-- end .sub-footer -->';	
+
+		genesis_widget_area( 'sub-footer-left', array(
+			'before' => '<div class="sub-footer-left">',
+			'after'  => '</div>',
+		) );
+
+		genesis_widget_area( 'sub-footer-right', array(
+			'before' => '<div class="sub-footer-right">',
+			'after'  => '</div>',
+		) );
+
+		echo '</div><!-- end .wrap --></div><!-- end .sub-footer -->';
 	}
-	
+
 }
 
 add_action( 'init', 'cc14_cleanup_hooks', 99 );
 function cc14_cleanup_hooks() {
-    remove_action ('wp_head', 'mbsb_enqueue_frontend_scripts_and_styles');
+	remove_action ('wp_head', 'mbsb_enqueue_frontend_scripts_and_styles');
 }
 
 //* Register widget areas
@@ -165,12 +161,22 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the right section of the sub footer.', 'cc14' ),
 ) );
 genesis_register_sidebar( array(
-	'id'          => 'sermon-right',
-	'name'        => __( 'Sermon Sidebar - Right', 'cc14' ),
-	'description' => __( 'This is the right section of Sermon pages.', 'cc14' ),
+	'id'          => 'sermon-sidebar',
+	'name'        => __( 'Sermon - Primary Sidebar', 'cc14' ),
+	'description' => __( 'This is the primary sidebar of Sermon pages.', 'cc14' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'about-bottom',
 	'name'        => __( 'About - Bottom', 'cc14' ),
 	'description' => __( 'This is the bottom section of the About page.', 'cc14' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'preacher-sidebar',
+	'name'        => __( 'Preacher - Primary Sidebar', 'cc14' ),
+	'description' => __( 'This is the primary sidebar of Preacher pages.', 'cc14' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'series-sidebar',
+	'name'        => __( 'Sermon Series - Primary Sidebar', 'cc14' ),
+	'description' => __( 'This is the primary sidebar of Sermon Series pages.', 'cc14' ),
 ) );

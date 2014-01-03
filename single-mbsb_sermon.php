@@ -3,13 +3,13 @@
 add_action( 'genesis_meta', 'cc14_sermon_genesis_meta' );
 function cc14_sermon_genesis_meta() {
 
-	if ( is_active_sidebar( 'sermon-right' ) ) {
+	if ( is_active_sidebar( 'sermon-sidebar' ) ) {
 		//* Force content-sidebar layout setting
 		add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar' );
 
 		//* Display sermon sidebar instead of primary
 		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-		add_action( 'genesis_sidebar', 'cc14_sermon_right_sidebar' );
+		add_action( 'genesis_sidebar', 'cc14_sermon_sidebar_widgets' );
 	}
 
 	//* Remove post-meta
@@ -20,8 +20,8 @@ function cc14_sermon_genesis_meta() {
 	add_filter('genesis_entry_content', 'cc14_sermon_media');
 }
 
-function cc14_sermon_right_sidebar() {
-	genesis_widget_area( 'sermon-right', array() );
+function cc14_sermon_sidebar_widgets() {
+	genesis_widget_area( 'sermon-sidebar', array() );
 }
 
 function cc14_sermon_media() {
