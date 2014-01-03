@@ -20,7 +20,7 @@ function cc14_preacher_genesis_meta() {
 
 function cc14_preacher_title() {
 	global $post;
-	$title = get_post_meta($post->ID, 'title', true);
+	$title = get_post_meta($post->ID, 'position', true);
 
 	if ($title) {
 		echo '<div class="title"><em>' . $title . '</em></div>';
