@@ -37,7 +37,7 @@ function cc14_sermon_media() {
 		}
 
 		if ($video) {
-			parse_str( parse_url( $attachment->get_url(), PHP_URL_QUERY ) );
+			parse_str( parse_url( $video->get_url(), PHP_URL_QUERY ) );
 			if ($v) { ?>
 	<section class="sermon_video">
 		<div class="wrap">
