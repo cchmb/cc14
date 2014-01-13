@@ -27,10 +27,10 @@ function cc14_enqueue_responsive_script() {
 	wp_enqueue_script( 'cc14-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
 }
 
-//* Add new image sizes
-add_image_size( 'home-top', 1140, 460, TRUE );
-add_image_size( 'home-bottom', 285, 160, TRUE );
-add_image_size( 'sidebar', 300, 150, TRUE );
+// Remove all image sizes.
+add_filter( 'intermediate_image_sizes_advanced', function( $sizes ) {
+    return array();
+});
 
 //* Add support for custom header
 add_theme_support( 'custom-header', array(
