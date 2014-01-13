@@ -1981,6 +1981,10 @@ Custom
 	color: #999;
 }
 
+.widget_related_sermons .wp-post-image {
+	margin-bottom: 1em;
+}
+
 .widget_mcheyne_reading_plan .download-link {
 	text-align: right;
 	font-size: 80%;

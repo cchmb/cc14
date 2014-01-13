@@ -28,9 +28,7 @@ function cc14_enqueue_responsive_script() {
 }
 
 // Remove all image sizes.
-add_filter( 'intermediate_image_sizes_advanced', function( $sizes ) {
-    return array();
-});
+add_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99 );
 
 //* Add support for custom header
 add_theme_support( 'custom-header', array(
@@ -96,6 +94,12 @@ function cc14_author_box_gravatar_size( $size ) {
 
     return '80';
 
+}
+
+add_filter( 'post_thumbnail_html', 'cc14_post_image_html', 10, 3 );
+function cc14_post_image_html( $html, $post_id, $post_image_id ) {
+    $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
+    return $html;
 }
 
 //* Remove comment form allowed tags
