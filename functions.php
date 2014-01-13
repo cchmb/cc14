@@ -96,6 +96,9 @@ function cc14_author_box_gravatar_size( $size ) {
 
 }
 
+// Remove edit link
+add_filter( 'genesis_edit_post_link', '__return_false' );
+
 add_filter( 'post_thumbnail_html', 'cc14_post_image_html', 10, 3 );
 function cc14_post_image_html( $html, $post_id, $post_image_id ) {
     $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
