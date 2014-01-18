@@ -2053,3 +2053,41 @@ Custom
 #wpadminbar {
 	background: rgba(0, 0, 0, 0.75);
 }
+
+
+.leadership-headshots .headshot {
+	text-align: center;
+}
+.leadership-headshots .headshot h2 {
+	font-size: 18px;
+	font-size: 1.8rem;
+	margin: 0;
+}
+
+@media only screen and (min-width: 480px) {
+	.leadership-headshots {
+		clear: both;
+	}
+	.leadership-headshots .headshot {
+		width: 45%;
+		margin-left: 10%;
+		float: left;
+		vertical-align: top;
+	}
+	.leadership-headshots .headshot:nth-of-type(2n+1) {
+		margin-left: 0;
+	}
+}
+
+@media only screen and (min-width: 748px) {
+	.leadership-headshots .headshot {
+		width: 30%;
+		margin-left: 5%;
+	}
+	.leadership-headshots .headshot:nth-of-type(2n+1) {
+		margin-left: 5%;
+	}
+	.leadership-headshots .headshot:nth-of-type(3n+1) {
+		margin-left: 0;
+	}
+}
