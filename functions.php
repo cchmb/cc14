@@ -1,27 +1,26 @@
 <?php
-//* Start the engine
+// Start the engine
 include_once( get_template_directory() . '/lib/init.php' );
 
-//* Set Localization (do not remove)
+// Set Localization (do not remove)
 load_child_theme_textdomain( 'cc14', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'cc14' ) );
 
-//* Child theme (do not remove)
+// Child theme (do not remove)
 define( 'CHILD_THEME_NAME', __( 'Calvary Chapel HMB 2014', 'cc14' ) );
 define( 'CHILD_THEME_URL', 'http://www.cchmb.org/' );
 
-//* Add HTML5 markup structure
+// Add HTML5 markup structure
 add_theme_support( 'html5' );
 
-//* Add viewport meta tag for mobile browsers
+// Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
-//* Enqueue Google fonts
-add_action( 'wp_enqueue_scripts', 'cc14_google_fonts' );
-function cc14_google_fonts() {
-  wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700', array(), CHILD_THEME_VERSION );
-}
+// Enqueue Google fonts
+add_action( 'wp_enqueue_scripts', function() {
+  wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700', array(), null );
+});
 
-//* Enqueue Responsive Menu Script
+// Enqueue Responsive Menu Script
 add_action( 'wp_enqueue_scripts', 'cc14_enqueue_responsive_script' );
 function cc14_enqueue_responsive_script() {
   wp_enqueue_script( 'cc14-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
@@ -30,7 +29,7 @@ function cc14_enqueue_responsive_script() {
 // Remove all image sizes.
 add_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99 );
 
-//* Add support for custom header
+// Add support for custom header
 add_theme_support( 'custom-header', array(
   'header-selector' => '.site-title a',
   'header-text'     => false,
@@ -38,10 +37,7 @@ add_theme_support( 'custom-header', array(
   'width'           => 340,
 ) );
 
-//* Add support for custom background
-add_theme_support( 'custom-background' );
-
-//* Add support for structural wraps
+// Add support for structural wraps
 add_theme_support( 'genesis-structural-wraps', array(
   'header',
   'nav',
@@ -51,10 +47,10 @@ add_theme_support( 'genesis-structural-wraps', array(
   'footer',
 ) );
 
-//* Add support for 4-column footer widgets
+// Add support for 4-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 4 );
 
-//* Set Genesis Responsive Slider defaults
+// Set Genesis Responsive Slider defaults
 add_filter( 'genesis_responsive_slider_settings_defaults', 'cc14_responsive_slider_defaults' );
 function cc14_responsive_slider_defaults( $defaults ) {
 
@@ -76,48 +72,37 @@ function cc14_responsive_slider_defaults( $defaults ) {
   return $args;
 }
 
-//* Hook after post widget after the entry content
-add_action( 'genesis_after_entry', 'cc14_after_entry', 5 );
-function cc14_after_entry() {
-
-  if ( is_singular( 'post' ) )
+// Hook after post widget after the entry content
+add_action( 'genesis_after_entry', function() {
+  if ( is_singular( 'post' ) ) {
     genesis_widget_area( 'after-entry', array(
       'before' => '<div class="after-entry widget-area">',
       'after'  => '</div>',
     ) );
+  }
+}, 5 );
 
-}
-
-//* Modify the size of the Gravatar in the author box
-add_filter( 'genesis_author_box_gravatar_size', 'cc14_author_box_gravatar_size' );
-function cc14_author_box_gravatar_size( $size ) {
-
-    return '80';
-
-}
+// Modify the size of the Gravatar in the author box
+add_filter( 'genesis_author_box_gravatar_size', function( $size ) {
+  return '80';
+});
 
 // Remove edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
-add_filter( 'post_thumbnail_html', 'cc14_post_image_html', 10, 3 );
-function cc14_post_image_html( $html, $post_id, $post_image_id ) {
-    $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
-    return $html;
-}
+// Wrap post thumbnail in a link
+add_filter( 'post_thumbnail_html', function( $html, $post_id, $post_image_id ) {
+  return '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
+}, 10, 3 );
 
-//* Remove comment form allowed tags
-add_filter( 'comment_form_defaults', 'mpp_remove_comment_form_allowed_tags' );
-function mpp_remove_comment_form_allowed_tags( $defaults ) {
-
+// Remove comment form allowed tags
+add_filter( 'comment_form_defaults', function( $defaults ) {
   $defaults['comment_notes_after'] = '';
   return $defaults;
+});
 
-}
-
-//* Add the sub footer section
-add_action( 'genesis_before_footer', 'cc14_sub_footer', 5 );
-function cc14_sub_footer() {
-
+// Add the sub footer section
+add_action( 'genesis_before_footer', function() {
   if ( is_active_sidebar( 'sub-footer-left' ) || is_active_sidebar( 'sub-footer-right' ) ) {
     echo '<div class="sub-footer"><div class="wrap">';
 
@@ -133,15 +118,15 @@ function cc14_sub_footer() {
 
     echo '</div><!-- end .wrap --></div><!-- end .sub-footer -->';
   }
+}, 5 );
 
-}
-
-add_action( 'init', 'cc14_cleanup_hooks', 99 );
-function cc14_cleanup_hooks() {
+// Cleanup hooks
+add_action( 'init', function () {
   remove_action ('wp_head', 'mbsb_enqueue_frontend_scripts_and_styles');
-}
+}, 99 );
 
-//* Register widget areas
+
+// Register widget areas
 genesis_register_sidebar( array(
   'id'          => 'home-top',
   'name'        => __( 'Home - Top', 'cc14' ),

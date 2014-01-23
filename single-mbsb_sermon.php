@@ -1,30 +1,22 @@
 <?php
 
-add_action( 'genesis_meta', 'cc14_sermon_genesis_meta' );
-function cc14_sermon_genesis_meta() {
+// Add sermon sidebar widgets if present
+if ( is_active_sidebar( 'sermon-sidebar' ) ) {
+  add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar' );
 
-  if ( is_active_sidebar( 'sermon-sidebar' ) ) {
-    //* Force content-sidebar layout setting
-    add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar' );
-
-    //* Display sermon sidebar instead of primary
-    remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-    add_action( 'genesis_sidebar', 'cc14_sermon_sidebar_widgets' );
-  }
-
-  //* Remove post-meta
-  remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
-
-  //* Use custom entry content
-  remove_filter('the_content', 'mbsb_provide_content');
-  add_filter('genesis_entry_content', 'cc14_sermon_media');
+  // Display sermon sidebar instead of primary
+  remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+  add_action( 'genesis_sidebar', function() {
+    genesis_widget_area( 'sermon-sidebar', array() );
+  });
 }
 
-function cc14_sermon_sidebar_widgets() {
-  genesis_widget_area( 'sermon-sidebar', array() );
-}
+// Remove post-meta
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
-function cc14_sermon_media() {
+// Use custom entry content
+remove_filter('the_content', 'mbsb_provide_content');
+add_filter('genesis_entry_content', function() {
     global $post;
     $sermon = new mbsb_sermon($post->ID);
 
@@ -54,6 +46,6 @@ function cc14_sermon_media() {
         <p class="download_link"><a href="<?php esc_attr_e($audio->get_url()) ?>">Download audio file</a></p>
       </section>
     <?php }
-}
+});
 
 genesis();

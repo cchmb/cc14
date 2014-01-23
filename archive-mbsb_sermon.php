@@ -1,29 +1,15 @@
 <?php
 
-add_action( 'genesis_meta', 'cc14_sermon_genesis_meta' );
-function cc14_sermon_genesis_meta() {
-  //* Remove post-meta
-  remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+// Remove post-meta
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
-  remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 
-  remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
-  add_action( 'genesis_entry_header', 'genesis_do_post_image', 8 );
+// Display image above title
+remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+add_action( 'genesis_entry_header', 'genesis_do_post_image', 8 );
 
-  add_filter( 'genesis_get_image', 'cc14_sermon_youtube_image', 10, 6 );
-
-  add_action( 'genesis_before_loop', 'cc14_sermon_before_loop' );
-  add_filter( 'genesis_after_loop', 'cc14_sermon_series' );
-
-  remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
-}
-
-
-function cc14_sermon_before_loop() {
-  echo '<section id="latest-sermons">';
-  echo '  <h1 class="entry-title">Latest Sermons</h1>';
-}
-
+add_filter( 'genesis_get_image', 'cc14_sermon_youtube_image', 10, 6 );
 function cc14_sermon_youtube_image( $output, $args, $id, $html, $url, $src ) {
   if ( $output == "" ) {
     global $post;
@@ -41,7 +27,12 @@ function cc14_sermon_youtube_image( $output, $args, $id, $html, $url, $src ) {
   return $output;
 }
 
-function cc14_sermon_series() {
+
+add_action( 'genesis_before_loop', function() {
+  echo '<section id="latest-sermons">';
+  echo '  <h1 class="entry-title">Latest Sermons</h1>';
+});
+add_filter( 'genesis_after_loop', function() {
   echo '</section>';
   echo '<section id="series">';
   echo '  <h1 class="entry-title">Sermon Series</h1>';
@@ -56,6 +47,8 @@ function cc14_sermon_series() {
   ) );
 
   echo '</section>';
-}
+});
+
+remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 
 genesis();

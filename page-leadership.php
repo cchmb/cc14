@@ -1,7 +1,6 @@
 <?php
 
-add_shortcode('headshot', 'cc14_leadership_headshot');
-function cc14_leadership_headshot( $atts, $content ) {
+add_shortcode('headshot', function( $atts, $content ) {
   $defaults = array( 'id' => 0, 'name' => '' );
   $atts = shortcode_atts( $defaults, $atts, 'headshot' );
   extract($atts);
@@ -31,6 +30,6 @@ function cc14_leadership_headshot( $atts, $content ) {
   wp_reset_query();
 
   return apply_filters('cc14_leadership_headshot', $output, $atts);
-}
+});
 
 genesis();
