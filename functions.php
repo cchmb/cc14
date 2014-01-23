@@ -17,14 +17,8 @@ add_theme_support( 'genesis-responsive-viewport' );
 
 // Enqueue Google fonts
 add_action( 'wp_enqueue_scripts', function() {
-  wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700', array(), null );
+  //wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700', array(), null );
 });
-
-// Enqueue Responsive Menu Script
-add_action( 'wp_enqueue_scripts', 'cc14_enqueue_responsive_script' );
-function cc14_enqueue_responsive_script() {
-  wp_enqueue_script( 'cc14-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
-}
 
 // Remove all image sizes.
 add_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99 );

@@ -49,7 +49,6 @@
     - Header Navigation
     - Primary Navigation
     - Secondary Navigation
-    - Responsive Menu
   - Content Area
     - Home Page
     - Entries
@@ -74,16 +73,7 @@
 Imports
 ---------------------------------------------------------------------------------------------------- */
 
-@font-face {
-  font-family: 'Icon';
-  src:url('fonts/Icon.eot');
-  src:url('fonts/Icon.eot?#iefix') format('embedded-opentype'),
-    url('fonts/Icon.woff') format('woff'),
-    url('fonts/Icon.ttf') format('truetype'),
-    url('fonts/Icon.svg#Icon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+@import '//fonts.googleapis.com/css?family=Open+Sans:400,700';
 
 /*
 HTML5 Reset
@@ -1279,30 +1269,6 @@ Site Navigation
   border-color: #292929;
 }
 
-/* Responsive Menu
---------------------------------------------- */
-
-#responsive-menu-icon {
-  cursor: pointer;
-  display: none;
-}
-
-#responsive-menu-icon::before {
-  -webkit-font-smoothing: antialiased;
-  color: #fff;
-  content: "\e00e";
-  font-family: 'Icon';
-  font-size: 16px;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: 1;
-  margin: 0 auto;
-  speak: none;
-  text-transform: none;
-}
-
 
 /*
 Content Area
@@ -1919,14 +1885,6 @@ Media Queries
 }
 
 @media only screen and (max-width: 480px) {
-
-  .responsive-menu {
-    display: none;
-  }
-
-  #responsive-menu-icon {
-    display: block;
-  }
 
   .site-inner {
     padding-top: 5%;
