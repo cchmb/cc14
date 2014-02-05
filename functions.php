@@ -84,11 +84,6 @@ add_filter( 'genesis_author_box_gravatar_size', function( $size ) {
 // Remove edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
-// Wrap post thumbnail in a link
-add_filter( 'post_thumbnail_html', function( $html, $post_id, $post_image_id ) {
-  return '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
-}, 10, 3 );
-
 // Remove comment form allowed tags
 add_filter( 'comment_form_defaults', function( $defaults ) {
   $defaults['comment_notes_after'] = '';
