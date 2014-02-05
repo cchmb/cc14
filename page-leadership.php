@@ -20,7 +20,7 @@ add_shortcode('headshot', function( $atts, $content ) {
 ?>
   <section id="<?php esc_attr_e($post->post_name) ?>" class="headshot">
     <a href="<?php the_permalink() ?>"><img width="300" height="300"
-      src="<?php genesis_image('format=url') ?>" /></a>
+      src="<?php genesis_image(array('format'=>'url', 'size'=>array('width'=>'300', 'height'=>'300'))) ?>" /></a>
     <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
     <p><em><?php esc_html_e( get_post_meta($post->ID, 'position', true) ); ?></em></p>
   </section>
