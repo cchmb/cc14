@@ -1932,6 +1932,7 @@ Custom
   }
 }
 
+.widget_recent_entries .post-date,
 .widget_related_sermons .post-date,
 .widget_recent_sermons .post-date {
   display: block;
