@@ -184,7 +184,6 @@ textarea:focus,
 
 a {
   color: #37689b;
-  text-decoration: none;
 }
 
 a:hover {
@@ -685,6 +684,7 @@ Common Classes
 
 .content .entry-title a {
   color: #333;
+  text-decoration: none;
 }
 
 .content .entry-title a:hover {
@@ -1111,6 +1111,7 @@ Site Navigation
 .genesis-nav-menu,
 .genesis-nav-menu a {
   color: #fff;
+  text-decoration: none;
 }
 
 .genesis-nav-menu .menu-item {
@@ -1372,7 +1373,6 @@ p.entry-meta {
   font-size: 12px;
   font-size: 1.2rem;
   margin-bottom: 0;
-  text-transform: uppercase;
 }
 
 p.entry-meta a {
@@ -1586,6 +1586,10 @@ Footer Widgets
 
 .footer-widgets input {
   border: 1px solid #333;
+}
+
+.footer-widgets a {
+  text-decoration: none;
 }
 
 .footer-widgets .entry-meta a:hover,
