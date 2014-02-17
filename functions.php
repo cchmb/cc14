@@ -44,28 +44,6 @@ add_theme_support( 'genesis-structural-wraps', array(
 // Add support for 4-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 4 );
 
-// Set Genesis Responsive Slider defaults
-add_filter( 'genesis_responsive_slider_settings_defaults', 'cc14_responsive_slider_defaults' );
-function cc14_responsive_slider_defaults( $defaults ) {
-
-  $args = array(
-    'location_horizontal'             => 'Left',
-    'location_vertical'               => 'bottom',
-    'posts_num'                       => '4',
-    'slideshow_excerpt_content_limit' => '100',
-    'slideshow_excerpt_content'       => 'full',
-    'slideshow_excerpt_width'         => '35',
-    'slideshow_height'                => '460',
-    'slideshow_more_text'             => __( 'Continue Reading', 'cc14' ),
-    'slideshow_title_show'            => 1,
-    'slideshow_width'                 => '1140',
-  );
-
-  $args = wp_parse_args( $args, $defaults );
-
-  return $args;
-}
-
 // Hook after post widget after the entry content
 add_action( 'genesis_after_entry', function() {
   if ( is_singular( 'post' ) ) {
