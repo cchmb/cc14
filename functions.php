@@ -44,6 +44,11 @@ add_theme_support( 'genesis-structural-wraps', array(
 // Add support for 4-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 4 );
 
+// Return {theme_dir}/css/style.css as the stylesheet_uri.
+add_filter( 'stylesheet_uri', function() {
+  return get_stylesheet_directory_uri() . '/css/style.css';
+});
+
 // Hook after post widget after the entry content
 add_action( 'genesis_after_entry', function() {
   if ( is_singular( 'post' ) ) {
