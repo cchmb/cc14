@@ -1,9 +1,10 @@
 /* Site Navigation */
 
+@import "mixins";
+
 .genesis-nav-menu {
   clear: both;
-  font-size: 14px;
-  font-size: 1.4rem;
+  @include rem(font-size, 14px);
   line-height: 1.5;
   width: 100%;
 }
@@ -21,8 +22,7 @@
 
 .genesis-nav-menu a {
   display: block;
-  padding: 18px 20px;
-  padding: 1.8rem 2rem;
+  @include rem(padding, 18px 20px);
 }
 
 .genesis-nav-menu .current-menu-item > a,
@@ -56,10 +56,8 @@
   border: 1px solid #fff;
   border-top: none;
   color: #333;
-  font-size: 12px;
-  font-size: 1.2rem;
-  padding: 14px 20px;
-  padding: 1.4rem 2rem;
+  @include rem(font-size, 12px);
+  @include rem(padding, 14px 20px);
   position: relative;
   width: 200px;
 }
@@ -96,8 +94,7 @@
 .genesis-nav-menu > .date,
 .genesis-nav-menu > .right > a {
   display: inline-block;
-  padding: 18px 20px;
-  padding: 1.8rem 2rem;
+  @include rem(padding, 18px 20px);
 }
 
 .genesis-nav-menu .right:hover > a {
@@ -111,15 +108,12 @@
 }
 
 .genesis-nav-menu > .search {
-  padding: 9px 0 0;
-  padding: 0.9rem 0 0;
+  @include rem(padding, 9px 0 0);
 }
 
 .genesis-nav-menu input[type="search"] {
-  font-size: 14px;
-  font-size: 1.4rem;
-  padding: 10px 16px;
-  padding: 1rem 1.6rem;
+  @include rem(font-size, 14px);
+  @include rem(padding, 10px 16px);
 }
 
 // Site Header Navigation
@@ -141,8 +135,7 @@
 
 .nav-secondary .wrap {
   background-color: #111;
-  margin-bottom: 16px;
-  margin-bottom: 1.6rem;
+  @include rem(margin-bottom, 16px);
 }
 
 .nav-secondary .genesis-nav-menu > li > a:hover,

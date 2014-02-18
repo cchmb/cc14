@@ -1,14 +1,14 @@
 /* Sidebars */
 
+@import "mixins";
+
 .sidebar {
   color: #333;
-  font-size: 14px;
-  font-size: 1.4rem;
+  @include rem(font-size, 14px);
 }
 
 .sidebar .widget {
   background-color: #fff;
   border: 1px solid #ddd;
-  padding: 30px;
-  padding: 3rem;
+  @include rem(padding, 30px);
 }

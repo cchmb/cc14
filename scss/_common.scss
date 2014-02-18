@@ -1,5 +1,7 @@
 /* Common Classes */
 
+@import "mixins";
+
 // Avatar
 
 .avatar {
@@ -8,55 +10,43 @@
 
 .alignleft .avatar,
 .author-box .avatar {
-  margin-right: 24px;
-  margin-right: 2.4rem;
+  @include rem(margin-right, 24px);
 }
 
 .alignright .avatar {
-  margin-left: 24px;
-  margin-left: 2.4rem;
+  @include rem(margin-left, 24px);
 }
 
 .comment .avatar {
-  margin: 0 16px 24px 0;
-  margin: 0 1.6rem 2.4rem 0;
+  @include rem(margin, 0 16px 24px 0);
 }
 
 // Genesis
 
 .breadcrumb {
   background-color: #f5f5f5;
-  font-size: 12px;
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  margin-bottom: 3rem;
-  padding: 10px 16px;
-  padding: 1rem 1.6rem;
+  @include rem(font-size, 12px);
+  @include rem(margin-bottom, 30px);
+  @include rem(padding, 10px 16px);
 }
 
 .archive-description {
   background-color: #f5f5f5;
-  margin-bottom: 30px;
-  margin-bottom: 3rem;
-  padding: 30px;
-  padding: 3rem;
+  @include rem(margin-bottom, 30px);
+  @include rem(padding, 30px);
 }
 
 .author-box {
   background-color: #111;
   color: #fff;
-  margin: 0 -40px 40px;
-  margin: 0 -4rem 4rem;
-  padding: 30px;
-  padding: 3rem;
+  @include rem(margin, 0 -40px 40px);
+  @include rem(padding, 30px);
 }
 
 .author-box-title {
-  font-size: 16px;
-  font-size: 1.6rem;
+  @include rem(font-size, 16px);
   font-weight: 700;
-  margin-bottom: 4px;
-  margin-bottom: 0.4rem;
+  @include rem(margin-bottom, 4px);
 }
 
 .archive-description p:last-child,
@@ -72,8 +62,7 @@
 
 .site-header .search-form {
   float: right;
-  margin-top: 12px;
-  margin-top: 1.2rem;
+  @include rem(margin-top, 12px);
 }
 
 .entry-content .search-form,
@@ -94,13 +83,11 @@
 // Titles
 
 .archive-title {
-  font-size: 20px;
-  font-size: 2rem;
+  @include rem(font-size, 20px);
 }
 
 .entry-title {
-  font-size: 30px;
-  font-size: 3rem;
+  @include rem(font-size, 30px);
   font-weight: 700;
 }
 
@@ -115,10 +102,8 @@
 
 .widget-title {
   color: #37689b;
-  font-size: 16px;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  margin-bottom: 2rem;
+  @include rem(font-size, 16px);
+  @include rem(margin-bottom, 20px);
   text-transform: uppercase;
 }
 
@@ -154,29 +139,25 @@ a.alignnone {
 img.centered,
 .aligncenter {
   display: block;
-  margin: 0 auto 24px;
-  margin: 0 auto 2.4rem;
+  @include rem(margin, 0 auto 24px);
 }
 
 img.alignnone,
 .alignnone {
   display: block;
-  margin-bottom: 16px;
-  margin-bottom: 1.6rem;
+  @include rem(margin-bottom, 16px);
 }
 
 a.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
-  margin: 0 24px 24px 0;
-  margin: 0 2.4rem 2.4rem 0;
+  @include rem(margin, 0 24px 24px 0);
 }
 
 a.alignright,
 img.alignright,
 .wp-caption.alignright {
-  margin: 0 0 24px 24px;
-  margin: 0 0 2.4rem 2.4rem;
+  @include rem(margin, 0 0 24px 24px);
 }
 
 .wp-caption-text {

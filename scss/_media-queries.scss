@@ -120,13 +120,11 @@
   .genesis-nav-menu a,
   .genesis-nav-menu > .first > a,
   .genesis-nav-menu > .last > a {
-    padding: 18px 12px;
-    padding: 1.8rem 1.2rem;
+    @include rem(padding, 18px 12px);
   }
 
   .site-header .search-form {
-    margin: 16px auto;
-    margin: 1.6rem auto;
+    @include rem(margin, 16px auto);
   }
 
   .sub-footer-left {
@@ -162,8 +160,7 @@
   }
 
   .archive-pagination li a {
-    margin-bottom: 4px;
-    margin-bottom: 0.4rem;
+    @include rem(margin-bottom, 4px);
   }
 
   .five-sixths,
@@ -211,8 +208,7 @@
   .genesis-nav-menu a,
   .genesis-nav-menu > .first > a,
   .genesis-nav-menu > .last > a {
-    padding: 4px 12px;
-    padding: 0.4rem 1.2rem;
+    @include rem(padding, 4px 12px);
   }
 
   .genesis-nav-menu li.right {
@@ -221,8 +217,7 @@
   }
 
   .nav-primary {
-    padding: 14px 0;
-    padding: 1.4rem 0;
+    @include rem(padding, 14px 0);
   }
 
   .entry-categories,

@@ -1,14 +1,15 @@
 /* Plugins */
 
-// Genesis eNews Extended
+@import "mixins";
 
+// Genesis eNews Extended
+/* uncomment if we ever use this plugin
 .sidebar .enews-widget .widget-title {
   color: #fff;
 }
 
 .enews-widget input {
-  margin-bottom: 16px;
-  margin-bottom: 1.6rem;
+  @include rem(margin-bottom, 16px);
 }
 
 .enews-widget input[type="submit"] {
@@ -24,12 +25,12 @@
 }
 
 .enews form + p {
-  margin-top: 24px;
-  margin-top: 2.4rem;
+  @include rem(margin-top, 24px);
 }
+*/
 
 // Genesis Responsive Slider
-
+/* uncomment if we ever use this plugin
 .content #genesis-responsive-slider {
   -webkit-box-shadow: 0 60px 100px rgba(0, 0, 0, 0.5);
   -moz-box-shadow:    0 60px 100px rgba(0, 0, 0, 0.5);
@@ -67,8 +68,7 @@
 html > body .content .slide-excerpt-border {
   border: none;
   margin: 0;
-  padding: 30px;
-  padding: 3rem;
+  @include rem(padding, 30px);
 }
 
 .content #genesis-responsive-slider p {
@@ -81,8 +81,7 @@ html > body .content .slide-excerpt-border {
 }
 
 .content #genesis-responsive-slider .flex-control-nav {
-  margin-top: -40px;
-  margin-top: -4rem;
+  @include rem(margin-top, -40px);
 }
 
 .content .genesis_responsive_slider .flex-direction-nav li a {
@@ -120,18 +119,17 @@ html > body .content .slide-excerpt-border {
 .content .genesis_responsive_slider .flex-direction-nav li a:hover.prev {
   background-position: 0 -49px;
 }
+*/
 
 
 // Gravity Forms
-
+/* uncomment if we ever use this plugin
 div.gform_wrapper input[type="email"],
 div.gform_wrapper input[type="text"],
 div.gform_wrapper textarea,
 div.gform_wrapper .ginput_complex label {
-  font-size: 16px;
-  font-size: 1.6rem;
-  padding: 16px;
-  padding: 1.6rem;
+  @include rem(font-size, 16px);
+  @include rem(padding, 16px);
 }
 
 div.gform_wrapper .ginput_complex label {
@@ -140,9 +138,9 @@ div.gform_wrapper .ginput_complex label {
 
 div.gform_wrapper li,
 div.gform_wrapper form li {
-  margin: 16px 0 0;
-  margin: 1.6rem 0 0;
+  @include rem(margin, 16px 0 0);
 }
+*/
 
 // Jetpack
 
