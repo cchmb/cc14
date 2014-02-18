@@ -1,9 +1,6 @@
-/*
-Content Area
----------------------------------------------------------------------------------------------------- */
+/* Content Area */
 
-/* Home Page
---------------------------------------------- */
+// Home Page
 
 .home-top .widget {
   margin: 0;
@@ -53,8 +50,7 @@ Content Area
   font-weight: 700;
 }
 
-/* Entries
---------------------------------------------- */
+// Entries
 
 .entry {
   margin-bottom: 40px;
@@ -92,8 +88,7 @@ Content Area
   color: #ddd;
 }
 
-/* Entry Meta
---------------------------------------------- */
+// Entry Meta
 
 p.entry-meta {
   color: #999;
@@ -130,8 +125,7 @@ p.entry-meta a:hover {
   float: right;
 }
 
-/* After Entry
---------------------------------------------- */
+// After Entry
 
 .after-entry {
   background-color: #f5f5f5;
@@ -154,8 +148,7 @@ p.entry-meta a:hover {
   text-align: center;
 }
 
-/* Pagination
---------------------------------------------- */
+// Pagination
 
 .pagination {
   margin: 40px 0 0;
@@ -186,8 +179,7 @@ p.entry-meta a:hover {
   background-color: #37689b;
 }
 
-/* Comments
---------------------------------------------- */
+// Comments
 
 .comment-respond,
 .entry-comments,
@@ -248,4 +240,3 @@ li.pingback {
   padding: 24px;
   padding: 2.4rem;
 }
-

@@ -52,12 +52,7 @@
     - Max-width: 1139px
     - Max-width: 1023px
     - Max-width: 767px
-
 */
-
-/*
-Imports
----------------------------------------------------------------------------------------------------- */
 
 @import '//fonts.googleapis.com/css?family=Open+Sans:400,700';
 
@@ -75,10 +70,7 @@ Imports
 @import "media-queries";
 
 
-/*
-Custom
----------------------------------------------------------------------------------------------------- */
-
+// Custom
 
 .google-map {
   border: 1px solid #ddd;
@@ -114,7 +106,7 @@ Custom
 
 .sermon_video > .wrap {
   position: relative;
-  padding-bottom: 56.25%; /* 9 / 16 */
+  padding-bottom: 56.25%; // 9 / 16
   padding-top: 30px;
   height:0;
   overflow: hidden;

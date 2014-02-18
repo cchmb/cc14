@@ -1,12 +1,9 @@
-/*
-Defaults
----------------------------------------------------------------------------------------------------- */
+/* Defaults */
 
-/* Typographical Elements
---------------------------------------------- */
+// Typographical Elements
 
 html {
-  font-size: 62.5%; /* 10px browser default */
+  font-size: 62.5%; // 10px browser default
 }
 
 body {
@@ -94,8 +91,7 @@ cite {
   font-style: normal;
 }
 
-/* Headings
---------------------------------------------- */
+// Headings
 
 h1,
 h2,
@@ -139,8 +135,7 @@ h6 {
   font-size: 1.6rem;
 }
 
-/* Objects
---------------------------------------------- */
+// Objects
 
 embed,
 iframe,
@@ -160,8 +155,7 @@ img {
   width: auto;
 }
 
-/* Forms
---------------------------------------------- */
+// Forms
 
 input,
 select,
@@ -236,8 +230,7 @@ input[type="search"]::-webkit-search-results-button {
   display: none;
 }
 
-/* Tables
---------------------------------------------- */
+// Tables
 
 table {
   border-collapse: collapse;
@@ -267,5 +260,3 @@ th {
   font-weight: 700;
   text-transform: uppercase;
 }
-
-

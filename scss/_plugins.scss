@@ -1,9 +1,6 @@
-/*
-Plugins
----------------------------------------------------------------------------------------------------- */
+/* Plugins */
 
-/* Genesis eNews Extended
---------------------------------------------- */
+// Genesis eNews Extended
 
 .sidebar .enews-widget .widget-title {
   color: #fff;
@@ -31,8 +28,7 @@ Plugins
   margin-top: 2.4rem;
 }
 
-/* Genesis Responsive Slider
------------------------------------------------------------- */
+// Genesis Responsive Slider
 
 .content #genesis-responsive-slider {
   -webkit-box-shadow: 0 60px 100px rgba(0, 0, 0, 0.5);
@@ -126,8 +122,7 @@ html > body .content .slide-excerpt-border {
 }
 
 
-/* Gravity Forms
---------------------------------------------- */
+// Gravity Forms
 
 div.gform_wrapper input[type="email"],
 div.gform_wrapper input[type="text"],
@@ -149,10 +144,8 @@ div.gform_wrapper form li {
   margin: 1.6rem 0 0;
 }
 
-/* Jetpack
---------------------------------------------- */
+// Jetpack
 
 #wpstats {
   display: none;
 }
-

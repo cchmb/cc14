@@ -1,9 +1,6 @@
-/*
-Structure and Layout
----------------------------------------------------------------------------------------------------- */
+/* Structure and Layout */
 
-/* Site Containers
---------------------------------------------- */
+// Site Containers
 
 .wrap {
   margin: 0 auto;
@@ -28,10 +25,9 @@ Structure and Layout
   max-width: 900px;
 }
 
-/* Column Widths and Positions
---------------------------------------------- */
+// Column Widths and Positions
 
-/* Wrapping div for .content and .sidebar-primary */
+// Wrapping div for .content and .sidebar-primary
 
 .content-sidebar-sidebar .content-sidebar-wrap,
 .sidebar-content-sidebar .content-sidebar-wrap,
@@ -48,7 +44,7 @@ Structure and Layout
   float: right;
 }
 
-/* Content */
+// Content
 
 .content {
   background-color: #fff;
@@ -81,7 +77,7 @@ Structure and Layout
   width: 100%;
 }
 
-/* Primary Sidebar */
+// Primary Sidebar
 
 .sidebar-primary {
   float: right;
@@ -93,7 +89,7 @@ Structure and Layout
   float: left;
 }
 
-/* Secondary Sidebar */
+// Secondary Sidebar
 
 .sidebar-secondary {
   float: left;
@@ -104,9 +100,8 @@ Structure and Layout
   float: right;
 }
 
-/* Column Classes
-  Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
---------------------------------------------- */
+// Column Classes
+// Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
 
 .five-sixths,
 .four-sixths,
@@ -159,5 +154,3 @@ Structure and Layout
   clear: both;
   margin-left: 0;
 }
-
-
