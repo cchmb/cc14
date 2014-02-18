@@ -1,0 +1,109 @@
+/*
+Sub Footer
+---------------------------------------------------------------------------------------------------- */
+
+.sub-footer {
+  background-color: #393939;
+  border-top: 1px solid #ddd;
+  color: #fff;
+  padding: 60px 0 30px;
+  padding: 6rem 0 3rem;
+}
+
+.sub-footer-left {
+  float: left;
+  width: 785px;
+}
+
+.sub-footer-right {
+  float: right;
+  font-size: 14px;
+  font-size: 1.4rem;
+  width: 235px;
+}
+
+.sub-footer-left .entry-title {
+  font-size: 30px;
+  font-size: 3rem;
+}
+
+
+/*
+Footer Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.footer-widgets {
+  background-color: #222;
+  color: #ccc;
+  clear: both;
+  font-size: 14px;
+  font-size: 1.4rem;
+  padding: 60px 0 30px;
+  padding: 6rem 0 3rem;
+}
+
+.footer-widgets input {
+  border: 1px solid #333;
+}
+
+.footer-widgets a {
+  text-decoration: none;
+}
+
+.footer-widgets .entry-meta a:hover,
+.footer-widgets a:hover {
+  color: #fff;
+}
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3,
+.footer-widgets-4 {
+  width: 255px;
+}
+
+.footer-widgets-1,
+.footer-widgets-2 {
+  margin-right: 40px;
+  margin-right: 4rem;
+}
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3 {
+  float: left;
+}
+
+.footer-widgets-4 {
+  float: right;
+}
+
+
+/*
+Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+.site-footer {
+  background-color: #222;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.07);
+  color: #666;
+  font-size: 14px;
+  font-size: 1.4rem;
+  padding: 40px 0;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #666;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.site-footer p {
+  margin-bottom: 0;
+}
+

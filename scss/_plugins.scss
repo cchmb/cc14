@@ -1,0 +1,158 @@
+/*
+Plugins
+---------------------------------------------------------------------------------------------------- */
+
+/* Genesis eNews Extended
+--------------------------------------------- */
+
+.sidebar .enews-widget .widget-title {
+  color: #fff;
+}
+
+.enews-widget input {
+  margin-bottom: 16px;
+  margin-bottom: 1.6rem;
+}
+
+.enews-widget input[type="submit"] {
+  border: none;
+  color: #fff;
+  margin: 0;
+  width: 100%;
+}
+
+.enews-widget input:hover[type="submit"] {
+  background-color: #eee;
+  color: #333;
+}
+
+.enews form + p {
+  margin-top: 24px;
+  margin-top: 2.4rem;
+}
+
+/* Genesis Responsive Slider
+------------------------------------------------------------ */
+
+.content #genesis-responsive-slider {
+  -webkit-box-shadow: 0 60px 100px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:    0 60px 100px rgba(0, 0, 0, 0.5);
+  box-shadow:         0 60px 100px rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 0;
+}
+
+.content #genesis-responsive-slider a:hover,
+.content #genesis-responsive-slider h2 a,
+.content #genesis-responsive-slider h2,
+.content #genesis-responsive-slider p {
+  color: #fff;
+}
+
+.content #genesis-responsive-slider a,
+.content #genesis-responsive-slider h2 a:hover {
+  color: #37689b;
+}
+
+#genesis-responsive-slider li {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content .slide-excerpt {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  filter: alpha(opacity=10);
+  margin: 0;
+  opacity: 1;
+}
+
+html > body .content .slide-excerpt-border {
+  border: none;
+  margin: 0;
+  padding: 30px;
+  padding: 3rem;
+}
+
+.content #genesis-responsive-slider p {
+  color: #fff;
+}
+
+.widget.genesis_responsive_slider,
+.content #genesis-responsive-slider .flex-control-nav {
+  margin-bottom: 0;
+}
+
+.content #genesis-responsive-slider .flex-control-nav {
+  margin-top: -40px;
+  margin-top: -4rem;
+}
+
+.content .genesis_responsive_slider .flex-direction-nav li a {
+  background: url(../images/icon-direction-nav.png) no-repeat -50px 0;
+  background-size: 100px 98px;
+  height: 49px;
+  right: -25px;
+  -webkit-transition: none;
+  -moz-transition:    none;
+  -ms-transition:     none;
+  -o-transition:      none;
+  transition:         none;
+  width: 50px;
+}
+
+.content .genesis_responsive_slider .flex-direction-nav li a:hover {
+  background-position: -50px -49px;
+}
+
+.content .genesis_responsive_slider .flex-direction-nav li a.prev {
+  background-position: 0 0;
+  bottom: 10px;
+  left: auto;
+  right: 62px !important;
+  top: auto;
+}
+
+.content #genesis-responsive-slider .flex-direction-nav li a.next {
+  bottom: 10px;
+  left: auto;
+  right: 10px !important;
+  top: auto;
+}
+
+.content .genesis_responsive_slider .flex-direction-nav li a:hover.prev {
+  background-position: 0 -49px;
+}
+
+
+/* Gravity Forms
+--------------------------------------------- */
+
+div.gform_wrapper input[type="email"],
+div.gform_wrapper input[type="text"],
+div.gform_wrapper textarea,
+div.gform_wrapper .ginput_complex label {
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 16px;
+  padding: 1.6rem;
+}
+
+div.gform_wrapper .ginput_complex label {
+  padding: 0;
+}
+
+div.gform_wrapper li,
+div.gform_wrapper form li {
+  margin: 16px 0 0;
+  margin: 1.6rem 0 0;
+}
+
+/* Jetpack
+--------------------------------------------- */
+
+#wpstats {
+  display: none;
+}
+

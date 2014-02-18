@@ -1,0 +1,92 @@
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+  background-color: #fff;
+  color: #333;
+  min-height: 110px;
+}
+
+.site-header .widget {
+  margin-bottom: 0;
+}
+
+.site-header .wrap {
+  padding: 20px 0 30px;
+  padding: 2rem 0 3rem;
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+  float: left;
+  padding: 14px 0;
+  padding: 1.4rem 0;
+  width: 340px;
+}
+
+.header-full-width .title-area {
+  width: 100%;
+}
+
+.site-title {
+  font-size: 43px;
+  font-size: 4.3rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.site-title a,
+.site-title a:hover {
+  color: #fff;
+}
+
+.header-image .title-area {
+  padding: 0;
+}
+
+.header-image .site-title > a {
+  float: left;
+  min-height: 100px;
+  width: 100%;
+}
+
+.site-description {
+  color: #999;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  height: 0;
+  line-height: 1.5;
+  text-indent: -9999px;
+}
+
+.site-description,
+.site-title {
+  margin-bottom: 0;
+}
+
+.header-image .site-description,
+.header-image .site-title {
+  display: block;
+  text-indent: -9999px;
+}
+
+/* Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area {
+  float: right;
+  padding-top: 14px;
+  padding-top: 1.4rem;
+  text-align: right;
+  width: 740px;
+}
+
+.site-header .genesis-nav-menu li li {
+  margin-left: 0;
+}
+

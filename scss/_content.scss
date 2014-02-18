@@ -1,0 +1,251 @@
+/*
+Content Area
+---------------------------------------------------------------------------------------------------- */
+
+/* Home Page
+--------------------------------------------- */
+
+.home-top .widget {
+  margin: 0;
+  padding: 0 40px 40px;
+  padding: 0 4rem 4rem;
+}
+
+.home-top .widget:first-child {
+  padding-top: 40px;
+  padding-top: 4rem;
+}
+
+.home-top .widget.genesis_responsive_slider {
+  padding: 0;
+}
+
+.cc14-home .content {
+  padding: 0;
+}
+
+.home-bottom {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding-top: 60px;
+  padding-top: 6rem;
+}
+
+.home-bottom .widget {
+  float: left;
+  margin-left: 2.564102564102564%;
+  width: 23.076923076923077%;
+}
+
+.home-bottom .widget:nth-child(4n+1) {
+  clear: both;
+  margin-left: 0;
+}
+
+.home-bottom .featured-content img {
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow:    1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow:         1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.home-bottom .widget-title {
+  color: #333;
+  font-weight: 700;
+}
+
+/* Entries
+--------------------------------------------- */
+
+.entry {
+  margin-bottom: 40px;
+  margin-bottom: 4rem;
+}
+
+.entry-content ol,
+.entry-content p,
+.entry-content ul {
+  margin-bottom: 26px;
+  margin-bottom: 2.6rem;
+}
+
+.entry-content ol,
+.entry-content ul {
+  margin-left: 40px;
+  margin-left: 4rem;
+}
+
+.entry-content ol > li {
+  list-style-type: decimal;
+}
+
+.entry-content ul > li {
+  list-style-type: disc;
+}
+
+.entry-content ol ol,
+.entry-content ul ul {
+  margin-bottom: 0;
+}
+
+.entry-content code {
+  background-color: #333;
+  color: #ddd;
+}
+
+/* Entry Meta
+--------------------------------------------- */
+
+p.entry-meta {
+  color: #999;
+  font-size: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+p.entry-meta a {
+  color: #999;
+}
+
+p.entry-meta a:hover {
+  color: #333;
+}
+
+.entry-footer .entry-meta {
+  border-top: 1px dotted #ddd;
+  padding-top: 12px;
+  padding-top: 1.2rem;
+}
+
+.entry-header .entry-meta {
+  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
+}
+
+.entry-categories {
+  float: left;
+}
+
+.entry-comments-link,
+.entry-tags {
+  float: right;
+}
+
+/* After Entry
+--------------------------------------------- */
+
+.after-entry {
+  background-color: #f5f5f5;
+  margin-bottom: 40px;
+  margin-bottom: 4rem;
+  padding: 30px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.after-entry p:last-child {
+  margin: 0;
+}
+
+.after-entry li {
+  list-style-type: none;
+}
+
+.after-entry .featured-content li {
+  text-align: center;
+}
+
+/* Pagination
+--------------------------------------------- */
+
+.pagination {
+  margin: 40px 0 0;
+  margin: 4rem 0 0;
+}
+
+.adjacent-entry-pagination {
+  margin-bottom: 0;
+}
+
+.archive-pagination li {
+  display: inline;
+}
+
+.archive-pagination li a {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 4px;
+  margin-bottom: 0.4rem;
+  padding: 8px 12px;
+  padding: 0.8rem 1.2rem;
+}
+
+.archive-pagination li a:hover,
+.archive-pagination .active a {
+  background-color: #37689b;
+}
+
+/* Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+  margin-bottom: 30px;
+  margin-bottom: 3rem;
+}
+
+li.comment,
+li.pingback {
+  background-color: #f5f5f5;
+  border: 2px solid #fff;
+  border-right: none;
+}
+
+.comment-content {
+  clear: both;
+}
+
+.comment-list li,
+.entry-pings li {
+  margin-top: 24px;
+  margin-top: 2.4rem;
+  padding: 32px;
+  padding: 3.2rem;
+}
+
+.comment-list li li {
+  margin-right: -32px;
+  margin-right: -3.2rem;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+  width: 50%;
+}
+
+.comment-respond label {
+  display: block;
+  margin-right: 12px;
+  margin-right: 1.2rem;
+}
+
+.entry-comments .comment-author {
+  margin-bottom: 0;
+}
+
+.entry-pings .reply {
+  display: none;
+}
+
+.bypostauthor {
+}
+
+.form-allowed-tags {
+  background-color: #f5f5f5;
+  padding: 24px;
+  padding: 2.4rem;
+}
+
