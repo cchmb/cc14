@@ -1,5 +1,7 @@
 /* Content Area */
 
+@import "compass/css3/box-shadow";
+
 // Home Page
 
 .home-top .widget {
@@ -37,9 +39,7 @@
 }
 
 .home-bottom .featured-content img {
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow:    1px 1px 4px rgba(0, 0, 0, 0.4);
-  box-shadow:         1px 1px 4px rgba(0, 0, 0, 0.4);
+  @include box-shadow(1px 1px 4px rgba(0, 0, 0, 0.4));
 }
 
 .home-bottom .widget-title {

@@ -1,17 +1,5 @@
 /* Media Queries */
 
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-  only screen and (-moz-min-device-pixel-ratio: 1.5),
-  only screen and (-o-min-device-pixel-ratio: 3/2),
-  only screen and (min-device-pixel-ratio: 1.5) {
-
-  .content #genesis-responsive-slider .flex-direction-nav li a {
-    background-image: url(../images/icon-direction-nav@2x.png);
-  }
-
-}
-
 @media only screen and (max-width: 1180px) {
 
   .wrap {
@@ -180,12 +168,6 @@
     width: 100%;
   }
 
-  .content #genesis-responsive-slider .flex-direction-nav li .next,
-  .content #genesis-responsive-slider .flex-direction-nav li .prev,
-  .content .slide-excerpt {
-    display: none;
-  }
-
   .home-bottom .widget {
     text-align: center;
     width: 48%;
@@ -237,10 +219,6 @@
 
   .content {
     padding: 5%;
-  }
-
-  .content #genesis-responsive-slider .flex-control-nav {
-    display: none;
   }
 
   .home-bottom .widget:nth-of-type(2n),

@@ -1,5 +1,6 @@
 /* Site Navigation */
 
+@import "compass/css3/transition";
 @import "mixins";
 
 .genesis-nav-menu {
@@ -42,11 +43,7 @@
   left: -9999px;
   opacity: 0;
   position: absolute;
-  -webkit-transition: opacity .4s ease-in-out;
-  -moz-transition:    opacity .4s ease-in-out;
-  -ms-transition:     opacity .4s ease-in-out;
-  -o-transition:      opacity .4s ease-in-out;
-  transition:         opacity .4s ease-in-out;
+  @include transition(opacity .4s ease-in-out);
   width: 200px;
   z-index: 999;
 }

@@ -1,5 +1,7 @@
 /* Plugins */
 
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
 @import "mixins";
 
 // Genesis eNews Extended
@@ -32,9 +34,7 @@
 // Genesis Responsive Slider
 /* uncomment if we ever use this plugin
 .content #genesis-responsive-slider {
-  -webkit-box-shadow: 0 60px 100px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow:    0 60px 100px rgba(0, 0, 0, 0.5);
-  box-shadow:         0 60px 100px rgba(0, 0, 0, 0.5);
+  @include box-shadow(0 60px 100px rgba(0, 0, 0, 0.5));
   border: none;
   padding: 0;
 }
@@ -89,11 +89,7 @@ html > body .content .slide-excerpt-border {
   background-size: 100px 98px;
   height: 49px;
   right: -25px;
-  -webkit-transition: none;
-  -moz-transition:    none;
-  -ms-transition:     none;
-  -o-transition:      none;
-  transition:         none;
+  @include transition(none);
   width: 50px;
 }
 
@@ -118,6 +114,31 @@ html > body .content .slide-excerpt-border {
 
 .content .genesis_responsive_slider .flex-direction-nav li a:hover.prev {
   background-position: 0 -49px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5) {
+
+  .content #genesis-responsive-slider .flex-direction-nav li a {
+    background-image: url(../images/icon-direction-nav@2x.png);
+  }
+
+}
+
+@media only screen and (max-width: 860px) {
+  .content #genesis-responsive-slider .flex-direction-nav li .next,
+  .content #genesis-responsive-slider .flex-direction-nav li .prev,
+  .content .slide-excerpt {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .content #genesis-responsive-slider .flex-control-nav {
+    display: none;
+  }
 }
 */
 
