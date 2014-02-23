@@ -123,6 +123,11 @@
   z-index: 0;
 }
 
+#latest-sermons img.entry-image {
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+}
+
 .post-type-archive-mbsb_sermon article .entry-title {
   @include rem(font-size, 16px);
 }
