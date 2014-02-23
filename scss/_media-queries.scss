@@ -155,23 +155,6 @@
     @include rem(margin-bottom, 4px);
   }
 
-  .five-sixths,
-  .four-sixths,
-  .one-fourth,
-  .one-half,
-  .one-sixth,
-  .one-third,
-  .sub-footer-left,
-  .sub-footer-right,
-  .three-fourths,
-  .three-sixths,
-  .two-fourths,
-  .two-sixths,
-  .two-thirds {
-    margin: 0;
-    width: 100%;
-  }
-
   .home-bottom .widget {
     text-align: center;
     width: 48%;
