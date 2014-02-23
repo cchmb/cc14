@@ -6,7 +6,8 @@
 
 .wrap {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: 768px;
+  padding: 0 5%;
 }
 
 .site-inner {
@@ -20,8 +21,9 @@
   @include rem(padding, 30px 0);
 }
 
-.cc14-landing .wrap {
-  max-width: 900px;
+.cc14-home .site-inner .wrap {
+  max-width: none;
+  padding: 0;
 }
 
 // Column Widths and Positions
