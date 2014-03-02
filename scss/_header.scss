@@ -13,15 +13,14 @@
 }
 
 .site-header .wrap {
-  @include rem(padding, 20px 0 30px);
+  padding: 20px 5% 16px;
+  padding: 2rem 5% 1.6rem;
 }
 
 // Title Area
 
 .title-area {
-  float: left;
-  @include rem(padding, 14px 0);
-  width: 340px;
+  overflow: auto;
 }
 
 .header-full-width .title-area {
@@ -73,10 +72,7 @@
 // Widget Area
 
 .site-header .widget-area {
-  float: right;
   @include rem(padding-top, 14px);
-  text-align: right;
-  width: 740px;
 }
 
 .site-header .genesis-nav-menu li li {

@@ -97,6 +97,12 @@ add_action( 'init', function () {
   remove_action ('wp_head', 'mbsb_enqueue_frontend_scripts_and_styles');
 }, 99 );
 
+add_filter( 'wp_head', function() { ?>
+<script>
+  // Chrome occasionally has issues applying this properly in CSS
+  (function() { document.documentElement.style.fontSize = "62.5%"; })();
+</script>
+<?php });
 
 // Register widget areas
 genesis_register_sidebar( array(

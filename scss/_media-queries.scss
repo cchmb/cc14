@@ -10,6 +10,30 @@
   .wrap {
     max-width: 960px;
   }
+
+  .site-header {
+    .wrap {
+      @include rem(padding, 20px 0 30px);
+    }
+    .widget-area {
+      float: right;
+      @include rem(padding-top, 14px);
+      text-align: right;
+      width: 600px;
+    }
+  }
+
+  .title-area {
+    float: left;
+    @include rem(padding, 14px 0);
+    width: 340px;
+  }
+}
+
+@media only screen and (min-width: 1180px) {
+  .site-header .widget-area {
+    width: 740px;
+  }
 }
 
 @media only screen and (min-width: 1180px) {
@@ -39,10 +63,6 @@
 
   .content {
     width: 630px;
-  }
-
-  .site-header .widget-area {
-    width: 600px;
   }
 
   .sidebar-content-sidebar .content,
@@ -79,15 +99,8 @@
   .sidebar-primary,
   .sidebar-secondary,
   .sidebar-sidebar-content .content,
-  .sidebar-sidebar-content .content-sidebar-wrap,
-  .site-header .widget-area,
-  .title-area {
+  .sidebar-sidebar-content .content-sidebar-wrap {
     width: 100%;
-  }
-
-  .site-header .wrap {
-    padding: 20px 5% 16px;
-    padding: 2rem 5% 1.6rem;
   }
 
   .header-image .site-title a {
@@ -107,14 +120,6 @@
   .site-header .title-area,
   .site-header .widget-area,
   .site-title {
-    text-align: center;
-  }
-
-  .site-header .simple-social-icons .alignleft,
-  .site-header .simple-social-icons .alignright,
-  .site-header .simple-social-icons ul li {
-    display: inline-block;
-    float: none;
     text-align: center;
   }
 
