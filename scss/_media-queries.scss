@@ -1,5 +1,18 @@
 /* Media Queries */
 
+@media only screen and (min-width: 720px) {
+  .nav-primary {
+    padding: 0;
+  }
+  .genesis-nav-menu > .right {
+    display: inline-block;
+    float: right;
+  }
+  .genesis-nav-menu a {
+    @include rem(padding, 18px 12px);
+  }
+}
+
 @media only screen and (min-width: 860px) {
   .wrap {
     padding: 0;
@@ -17,7 +30,6 @@
     }
     .widget-area {
       float: right;
-      @include rem(padding-top, 14px);
       text-align: right;
       width: 600px;
     }
@@ -27,6 +39,18 @@
     float: left;
     @include rem(padding, 14px 0);
     width: 340px;
+  }
+
+  .genesis-nav-menu {
+    a {
+      @include rem(padding, 18px 20px);
+    }
+    > .first > a {
+      padding-left: 0;
+    }
+    > .last > a {
+      padding-right: 0;
+    }
   }
 }
 
@@ -123,12 +147,6 @@
     text-align: center;
   }
 
-  .genesis-nav-menu a,
-  .genesis-nav-menu > .first > a,
-  .genesis-nav-menu > .last > a {
-    @include rem(padding, 18px 12px);
-  }
-
   .site-header .search-form {
     @include rem(margin, 16px auto);
   }
@@ -178,21 +196,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-
-  .genesis-nav-menu a,
-  .genesis-nav-menu > .first > a,
-  .genesis-nav-menu > .last > a {
-    @include rem(padding, 4px 12px);
-  }
-
-  .genesis-nav-menu li.right {
-    display: block;
-    float: none;
-  }
-
-  .nav-primary {
-    @include rem(padding, 14px 0);
-  }
 
   .entry-categories,
   .entry-comments-link,
