@@ -95,6 +95,7 @@ add_action( 'genesis_before_footer', function() {
 // Cleanup hooks
 add_action( 'init', function () {
   remove_action ('wp_head', 'mbsb_enqueue_frontend_scripts_and_styles');
+  remove_filter ('the_title', 'mbsb_filter_titles', 10, 2);
 }, 99 );
 
 add_filter( 'wp_head', function() { ?>
