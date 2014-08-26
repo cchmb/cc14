@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: News Pro Theme for Genesis Framework\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-29 16:38-0500\n"
+"POT-Creation-Date: 2014-07-28 00:51-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,69 +16,62 @@ msgstr ""
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions.php:9
+#: functions.php:12
 msgid "Outreach Pro Theme"
 msgstr ""
 
-#: functions.php:53
+#: functions.php:52
 msgid "Outreach Pro Blue"
 msgstr ""
 
-#: functions.php:54
+#: functions.php:53
 msgid "Outreach Pro Orange"
 msgstr ""
 
-#: functions.php:55
+#: functions.php:54
 msgid "Outreach Pro Purple"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:55
 msgid "Outreach Pro Red"
 msgstr ""
 
-#: functions.php:84
-msgid "Continue Reading"
-msgstr ""
-
-#: functions.php:148
+#: functions.php:120
 msgid "Home - Top"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:121
 msgid "This is the top section of the Home page."
 msgstr ""
 
-#: functions.php:153
+#: functions.php:125
 msgid "Home - Bottom"
 msgstr ""
 
-#: functions.php:154
+#: functions.php:126
 msgid "This is the bottom section of the Home page."
 msgstr ""
 
-#: functions.php:158
-msgid "After Entry"
-msgstr ""
-
-#: functions.php:159
-msgid "This is the after entry widget area."
-msgstr ""
-
-#: functions.php:163
+#: functions.php:130
 msgid "Sub Footer - Left"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:131
 msgid "This is the left section of the sub footer."
 msgstr ""
 
-#: functions.php:168
+#: functions.php:135
 msgid "Sub Footer - Right"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:136
 msgid "This is the right section of the sub footer."
+msgstr ""
+
+#: lib/theme-defaults.php:43 lib/theme-defaults.php:68
+#: lib/theme-defaults.php:91
+msgid "Continue Reading"
 msgstr ""

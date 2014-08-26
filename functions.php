@@ -2,33 +2,32 @@
 //* Start the engine
 include_once( get_template_directory() . '/lib/init.php' );
 
+//* Setup Theme
+include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
+
 //* Set Localization (do not remove)
 load_child_theme_textdomain( 'outreach', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'outreach' ) );
 
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', __( 'Outreach Pro Theme', 'outreach' ) );
 define( 'CHILD_THEME_URL', 'http://my.studiopress.com/themes/outreach/' );
-define( 'CHILD_THEME_VERSION', '3.0.0' );
+define( 'CHILD_THEME_VERSION', '3.1' );
 
 //* Add HTML5 markup structure
-add_theme_support( 'html5' );
+add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
-//* Enqueue Google fonts
-add_action( 'wp_enqueue_scripts', 'outreach_google_fonts' );
-function outreach_google_fonts() {
-
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:400,700', array(), CHILD_THEME_VERSION );
-	
-}
-
-//* Enqueue Responsive Menu Script
-add_action( 'wp_enqueue_scripts', 'outreach_enqueue_responsive_script' );
-function outreach_enqueue_responsive_script() {
+//* Enqueue Scripts
+add_action( 'wp_enqueue_scripts', 'outreach_load_scripts' );
+function outreach_load_scripts() {
 
 	wp_enqueue_script( 'outreach-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
+	
+	wp_enqueue_style( 'dashicons' );
+	
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:400,700', array(), CHILD_THEME_VERSION );
 
 }
 
@@ -66,43 +65,6 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'footer',
 ) );
 
-//* Add support for 4-column footer widgets
-add_theme_support( 'genesis-footer-widgets', 4 );
-
-//* Set Genesis Responsive Slider defaults
-add_filter( 'genesis_responsive_slider_settings_defaults', 'outreach_responsive_slider_defaults' );
-function outreach_responsive_slider_defaults( $defaults ) {
-
-	$args = array(
-		'location_horizontal'             => 'Left',
-		'location_vertical'               => 'bottom',
-		'posts_num'                       => '4',
-		'slideshow_excerpt_content_limit' => '100',
-		'slideshow_excerpt_content'       => 'full',
-		'slideshow_excerpt_width'         => '35',
-		'slideshow_height'                => '460',
-		'slideshow_more_text'             => __( 'Continue Reading', 'outreach' ),
-		'slideshow_title_show'            => 1,
-		'slideshow_width'                 => '1140',
-	);
-
-	$args = wp_parse_args( $args, $defaults );
-	
-	return $args;
-}
-
-//* Hook after post widget after the entry content
-add_action( 'genesis_after_entry', 'outreach_after_entry', 5 );
-function outreach_after_entry() {
-
-	if ( is_singular( 'post' ) )
-		genesis_widget_area( 'after-entry', array(
-			'before' => '<div class="after-entry widget-area">',
-			'after'  => '</div>',
-		) );
-
-}
-
 //* Modify the size of the Gravatar in the author box
 add_filter( 'genesis_author_box_gravatar_size', 'outreach_author_box_gravatar_size' );
 function outreach_author_box_gravatar_size( $size ) {
@@ -112,8 +74,8 @@ function outreach_author_box_gravatar_size( $size ) {
 }
 
 //* Remove comment form allowed tags
-add_filter( 'comment_form_defaults', 'mpp_remove_comment_form_allowed_tags' );
-function mpp_remove_comment_form_allowed_tags( $defaults ) {
+add_filter( 'comment_form_defaults', 'outreach_remove_comment_form_allowed_tags' );
+function outreach_remove_comment_form_allowed_tags( $defaults ) {
 	
 	$defaults['comment_notes_after'] = '';
 	return $defaults;
@@ -142,6 +104,16 @@ function outreach_sub_footer() {
 	
 }
 
+//* Add support for 4-column footer widgets
+add_theme_support( 'genesis-footer-widgets', 4 );
+
+//* Add support for after entry widget
+add_theme_support( 'genesis-after-entry-widget-area' );
+
+//* Relocate after entry widget
+remove_action( 'genesis_after_entry', 'genesis_after_entry_widget_area' );
+add_action( 'genesis_after_entry', 'genesis_after_entry_widget_area', 5 );
+
 //* Register widget areas
 genesis_register_sidebar( array(
 	'id'          => 'home-top',
@@ -152,11 +124,6 @@ genesis_register_sidebar( array(
 	'id'          => 'home-bottom',
 	'name'        => __( 'Home - Bottom', 'outreach' ),
 	'description' => __( 'This is the bottom section of the Home page.', 'outreach' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'after-entry',
-	'name'        => __( 'After Entry', 'outreach' ),
-	'description' => __( 'This is the after entry widget area.', 'outreach' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'sub-footer-left',
