@@ -23,6 +23,8 @@ add_filter('genesis_entry_content', function() {
     foreach ($sermon->attachments->get_attachments() as $k => $attachment) {
         if (strstr($attachment->get_url(), 'youtube.com') !== false) {
           $video = $attachment;
+        } else if (strstr($attachment->get_url(), 'docs.google.com/presentation') !== false) {
+          $slides = $attachment;
         } else if (substr($attachment->get_mime_type(), 0, 5) == "audio") {
           $audio = $attachment;
         }
@@ -41,11 +43,22 @@ add_filter('genesis_entry_content', function() {
     }
 
     if ($audio) { ?>
-      <section class="sermon_audio"><h3>Audio only</h3>
-        <?php echo do_shortcode('[audio src="' . $audio->get_url() . '"]'); ?>
+      <section class="sermon_audio"><h3>Audio</h3>
+        <p><?php echo do_shortcode('[audio src="' . $audio->get_url() . '"]'); ?></p>
         <p class="download_link"><a href="<?php esc_attr_e($audio->get_url()) ?>">Download audio file</a></p>
       </section>
     <?php }
+
+    if ($slides) {
+      preg_match("#https://docs.google.com/presentation/d/([^/]+).*#", $slides->get_url(), $matches);
+      if ($id = $matches[1]) { ?>
+        <section class="sermon_slides"><h3>Sermon Slides</h3>
+          <div class="wrap">
+            <iframe src="https://docs.google.com/presentation/d/<?php esc_attr_e($id) ?>/embed" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </section>
+      <?php }
+    }
 });
 
 genesis();

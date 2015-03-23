@@ -106,22 +106,25 @@
   font-size: 80%;
 }
 
-.sermon_video > .wrap {
-  position: relative;
-  padding-bottom: 56.25%; // 9 / 16
-  padding-top: 30px;
-  height:0;
-  overflow: hidden;
+.sermon_video, .sermon_slides {
+  > .wrap {
+    position: relative;
+    padding-bottom: 56.25%; // 9 / 16
+    padding-top: 30px;
+    height:0;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+  }
 }
 
-.sermon_video > .wrap iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
 
 #latest-sermons img.entry-image {
   margin-bottom: 10px;
