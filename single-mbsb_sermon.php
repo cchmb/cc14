@@ -59,6 +59,6 @@ add_filter('genesis_entry_content', function() {
         </section>
       <?php }
     }
-});
+}, 9);
 
 genesis();
