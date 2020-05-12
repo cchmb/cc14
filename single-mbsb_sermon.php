@@ -32,10 +32,15 @@ add_filter('genesis_entry_content', function() {
 
     if ($video) {
       parse_str( parse_url( $video->get_url(), PHP_URL_QUERY ) );
-      if ($v) { ?>
+      if ($v) {
+        $embed_url = "https://www.youtube.com/embed/" . $v;
+        if ($t) {
+          $embed_url .= "?start=" . $t;
+        }
+?>
   <section class="sermon_video">
     <div class="wrap">
-      <iframe src="//www.youtube.com/embed/<?php esc_attr_e($v) ?>" frameborder="0" allowfullscreen></iframe>
+      <iframe src="<?php esc_attr_e($embed_url) ?>" frameborder="0" allowfullscreen></iframe>
     </div>
     <p class="download_link"><a href="<?php esc_attr_e($video->get_url()) ?>">Watch on YouTube</a></p>
   </section>
