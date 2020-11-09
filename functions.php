@@ -258,8 +258,17 @@ genesis_register_sidebar( array(
   'description' => __( 'This is the primary sidebar of Sermon Series pages.', 'cc14' ),
 ) );
 
-/*
-add_filter( "the_author", function( $author ) {
-  return "foo";
+// display speaker as the author for sermons
+add_action( "wp", function() {
+  if ( ctfw_current_content_type() == 'sermon' ) {
+    if ($speakers = get_the_terms( $post->ID, 'ctc_sermon_speaker' )) {
+      $speaker = $speakers[0];
+      add_filter( "the_author", function( $author ) use ( $speaker ) {
+        return $speaker->name;
+      });
+      add_filter( "author_link", function( $link ) use ( $speaker ) {
+        return get_term_link($speaker);
+      });
+    }
+  }
 });
-*/
