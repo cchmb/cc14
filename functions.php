@@ -258,6 +258,26 @@ genesis_register_sidebar( array(
   'description' => __( 'This is the primary sidebar of Sermon Series pages.', 'cc14' ),
 ) );
 
+// Add content-specific default images
+add_filter( 'genesis_get_image_default_args', function ( $defaults, $args ) {
+  if ( is_tax() ) {
+    if ($id = apply_filters('taxonomy-images-queried-term-image-id', 0)) {
+      $defaults['fallback'] = $id;
+    }
+  } else {
+    $type = get_post_type( $args['post_id'] );
+    switch ($type) {
+      case 'ctc_sermon':
+        if ($series = apply_filters('taxonomy-images-get-the-terms', '',
+                                    ['post_id'=>$post->ID, 'taxonomy'=>'ctc_sermon_series'])) {
+          $defaults['fallback'] = $series[0]->image_id;
+        }
+    }
+  }
+
+  return $defaults;
+}, 10, 2);
+
 // display speaker as the author for sermons
 add_action( "wp", function() {
   if ( ctfw_current_content_type() == 'sermon' ) {

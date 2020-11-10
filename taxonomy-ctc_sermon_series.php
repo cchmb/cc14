@@ -17,7 +17,7 @@ remove_action( 'genesis_loop', 'genesis_do_loop' );
 // replace default genesis archive headline with custom
 remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_headline', 10, 3 );
 add_action( 'genesis_archive_title_descriptions', function($heading='', $intro_text='', $context='') {
-  if ($image = apply_filters('taxonomy-images-queried-term-image', '', ['image_size'=>'large'])) {
+  if ($image = genesis_get_image()) {
     $heading = $image;
   } else {
     if ( !$heading ) {
