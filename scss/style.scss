@@ -131,48 +131,9 @@
   margin-bottom: 1rem;
 }
 
-.post-type-archive-mbsb_sermon,
 .post-type-archive-ctc_sermon {
   article .entry-title {
     @include rem(font-size, 16px);
-  }
-}
-
-.post-type-archive-mbsb_sermon .entry-header img {
-  width: 100%;
-}
-.post-type-archive-mbsb_sermon .mbsb_series img {
-  margin-bottom: 0.5em;
-}
-
-@media only screen and (min-width: 480px) {
-  .post-type-archive-mbsb_sermon article {
-    display: inline-block;
-    vertical-align: top;
-    width: 45%;
-  }
-  .post-type-archive-mbsb_sermon article:nth-of-type(2n) {
-    margin-left: 10%;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .post-type-archive-mbsb_sermon article.mbsb_series {
-    width: 30%;
-    margin-left: 5%;
-  }
-  .post-type-archive-mbsb_sermon .mbsb_series:nth-of-type(3n+1) {
-    margin-left: 0;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  .post-type-archive-mbsb_sermon article.mbsb_sermon {
-    width: 22%;
-    margin-left: 4%;
-  }
-  .post-type-archive-mbsb_sermon .mbsb_sermon:nth-of-type(4n+1) {
-    margin-left: 0;
   }
 }
 

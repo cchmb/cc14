@@ -125,12 +125,6 @@ add_action( 'genesis_before_footer', function() {
   }
 }, 5 );
 
-// Cleanup hooks
-add_action( 'init', function () {
-  remove_action ('wp_head', 'mbsb_enqueue_frontend_scripts_and_styles');
-  remove_filter ('the_title', 'mbsb_filter_titles', 10, 2);
-}, 99 );
-
 // Register widget areas
 genesis_register_sidebar( array(
   'id'          => 'home-top',

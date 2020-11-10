@@ -32,8 +32,6 @@ add_action( 'genesis_archive_title_descriptions', function($heading='', $intro_t
   }
 }, 10, 3 );
 
-
-
 // use series description if no intro text is present
 add_filter('genesis_term_intro_text_output', function( $text ) {
   if ( !$text ) {
@@ -42,17 +40,5 @@ add_filter('genesis_term_intro_text_output', function( $text ) {
   }
   return $text;
 }, 10);
-
-
-
-// Use featured image in place of title if present.
-
-add_action( 'genesis_post_title_text', function( $text ) {
-  $img = genesis_get_image('size=large');
-  if ( $img ) {
-    $text = $img;
-  }
-  return $text;
-});
 
 genesis();
