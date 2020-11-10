@@ -9,27 +9,6 @@ remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 add_action( 'genesis_entry_header', 'genesis_do_post_image', 8 );
 
-add_filter( 'genesis_get_image', 'cc14_sermon_youtube_image', 10, 6 );
-function cc14_sermon_youtube_image( $output, $args, $id, $html, $url, $src ) {
-  if ( $output == "" ) {
-    extract( ctfw_sermon_data() );
-    if ($video && strstr($video, 'youtube.com') !== false) {
-      parse_str( parse_url( $video, PHP_URL_QUERY ) );
-      if ($v) {
-        $output = '<img src="//img.youtube.com/vi/' . $v . '/mqdefault.jpg"';
-        if ( array_key_exists('attr', $args) ) {
-          foreach ( array($args['attr']) as $name => $value ) {
-            $output .= " $name=" . '"' . $value . '"';
-          }
-        }
-        $output .= ' />';
-      }
-    }
-  }
-
-  return $output;
-}
-
 add_action( 'genesis_before_loop', function() {
   echo '
   <section id="latest-sermons">

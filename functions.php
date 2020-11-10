@@ -174,6 +174,7 @@ genesis_register_sidebar( array(
 
 // Add content-specific default images
 add_filter( 'genesis_get_image_default_args', function ( $defaults, $args ) {
+  $args = wp_parse_args($args);
   if ( is_tax() ) {
     if ($id = apply_filters('taxonomy-images-queried-term-image-id', 0)) {
       $defaults['fallback'] = $id;
@@ -182,8 +183,22 @@ add_filter( 'genesis_get_image_default_args', function ( $defaults, $args ) {
     $type = get_post_type( $args['post_id'] );
     switch ($type) {
       case 'ctc_sermon':
-        if ($series = apply_filters('taxonomy-images-get-the-terms', '',
-                                    ['post_id'=>$post->ID, 'taxonomy'=>'ctc_sermon_series'])) {
+        extract( ctfw_sermon_data() );
+        if (strstr($video, 'youtube.com') !== false) {
+          parse_str( parse_url( $video, PHP_URL_QUERY ) );
+          if ($v) {
+            $url = "https://img.youtube.com/vi/$v/maxresdefault.jpg";
+            $attr = wp_parse_args($args['attr'], ["src"=>$url]);
+            $attr = array_map('esc_attr', $attr);
+            $html = '<img ';
+            foreach ( $attr as $name => $value ) {
+              $html .= " $name=" . '"' . $value . '"';
+            }
+            $html .= ' />';
+            $defaults['fallback'] = ['url'=>$url, 'html'=>$html];
+          }
+        } else if ($series = apply_filters('taxonomy-images-get-the-terms', '',
+                            ['post_id'=>$args['post_id'], 'taxonomy'=>'ctc_sermon_series'])) {
           $defaults['fallback'] = $series[0]->image_id;
         }
     }
