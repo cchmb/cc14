@@ -196,6 +196,18 @@
   }
 }
 
+// display archive description for series without normal box styling
+.tax-ctc_sermon_series {
+  .archive-title {
+    @include rem(font-size, 30px);
+    font-weight: 700;
+  }
+  .archive-description {
+    background: none;
+    padding: 0;
+  }
+}
+
 #wpadminbar {
   background: rgba(0, 0, 0, 0.75);
 }
