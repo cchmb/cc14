@@ -18,7 +18,7 @@ function cc14_sermon_youtube_image( $output, $args, $id, $html, $url, $src ) {
       if ($v) {
         $output = '<img src="//img.youtube.com/vi/' . $v . '/mqdefault.jpg"';
         if ( array_key_exists('attr', $args) ) {
-          foreach ( $args['attr'] as $name => $value ) {
+          foreach ( array($args['attr']) as $name => $value ) {
             $output .= " $name=" . '"' . $value . '"';
           }
         }
