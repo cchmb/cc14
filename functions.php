@@ -77,11 +77,6 @@ add_theme_support( 'ctc-people', array(
 // Remove all image resizes.
 add_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99 );
 
-// Return {theme_dir}/css/style.css as the stylesheet_uri.
-add_filter( 'stylesheet_uri', function() {
-  return get_stylesheet_directory_uri() . '/css/style.css';
-});
-
 // Hook after post widget after the entry content
 add_action( 'genesis_after_entry', function() {
   if ( is_singular( 'post' ) ) {

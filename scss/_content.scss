@@ -152,8 +152,6 @@ p.entry-meta a:hover {
 }
 
 .archive-pagination li a {
-  background-color: #333;
-  color: #fff;
   cursor: pointer;
   display: inline-block;
   @include rem(margin-bottom, 4px);
@@ -163,6 +161,7 @@ p.entry-meta a:hover {
 .archive-pagination li a:hover,
 .archive-pagination .active a {
   background-color: #37689b;
+  color: #fff;
 }
 
 // Comments

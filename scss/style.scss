@@ -54,6 +54,7 @@
     - Max-width: 767px
 */
 
+@import "wordpress-theme";
 @import "mixins";
 
 @import '//fonts.googleapis.com/css?family=Open+Sans:400,700';
@@ -142,6 +143,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 16px;
+
+    article {
+      margin-bottom: 0;
+    }
 
     .pagination {
       grid-column-start: 1;

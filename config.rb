@@ -1,5 +1,5 @@
 http_path = "/content/themes/cc14/"
-css_dir = "css"
+css_dir = ""
 fonts_dir = "fonts"
 sass_dir = "scss"
 images_dir = "images"
