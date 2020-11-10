@@ -1,35 +1,23 @@
 <?php
 
-add_shortcode('headshot', function( $atts, $content ) {
-  $defaults = array( 'id' => 0, 'name' => '' );
-  $atts = shortcode_atts( $defaults, $atts, 'headshot' );
-  extract($atts);
+// loop over people after normal content
+add_action( 'genesis_after_loop', function() {
+  remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+  remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+  remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 
-  global $wp_query, $post;
-  $q = array('post_type' => 'mbsb_preacher');
-  if ( $id ) {
-    $q['page_id'] = $id;
-  } else if ($name) {
-    $q['name'] = $name;
-  }
+  add_action( 'genesis_entry_header', 'genesis_do_post_image', 8 );
+  add_action( 'genesis_entry_content', function() {
+    extract( ctfw_person_data() );
+    echo '<p>' . $position . '</p>';
+  });
 
-  $wp_query = new WP_Query($q);
-
-  ob_start();
-  while ( have_posts() ) : the_post();
-?>
-  <section id="<?php esc_attr_e($post->post_name) ?>" class="headshot">
-    <a href="<?php the_permalink() ?>"><img width="300" height="300"
-      src="<?php genesis_image(array('format'=>'url', 'size'=>array('width'=>'300', 'height'=>'300'))) ?>" /></a>
-    <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-    <p><em><?php esc_html_e( get_post_meta($post->ID, 'position', true) ); ?></em></p>
-  </section>
-<?php endwhile;
-  $output = ob_get_clean();
-
-  wp_reset_query();
-
-  return apply_filters('cc14_leadership_headshot', $output, $atts);
-});
+  echo '<div id="leadership-team">';
+  genesis_custom_loop( array(
+    'posts_per_page' => -1, 'post_type' => 'ctc_person',
+    'orderby' => 'order', 'order' => 'asc',
+  ) );
+  echo '</div>';
+}, 11);
 
 genesis();
