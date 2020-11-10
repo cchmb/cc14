@@ -131,8 +131,11 @@
   margin-bottom: 1rem;
 }
 
-.post-type-archive-mbsb_sermon article .entry-title {
-  @include rem(font-size, 16px);
+.post-type-archive-mbsb_sermon,
+.post-type-archive-ctc_sermon {
+  article .entry-title {
+    @include rem(font-size, 16px);
+  }
 }
 
 .post-type-archive-mbsb_sermon .entry-header img {
@@ -170,6 +173,26 @@
   }
   .post-type-archive-mbsb_sermon .mbsb_sermon:nth-of-type(4n+1) {
     margin-left: 0;
+  }
+}
+
+.post-type-archive-ctc_sermon {
+  #latest-sermons > .sermons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 16px;
+
+    .pagination {
+      grid-column-start: 1;
+      grid-column-end: -1;
+      text-align: center;
+      margin: 0 0 2em 0;
+    }
+  }
+  #series > .sermons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 16px;
   }
 }
 
