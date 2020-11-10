@@ -208,8 +208,9 @@ add_filter( 'genesis_get_image_default_args', function ( $defaults, $args ) {
 }, 10, 2);
 
 // display speaker as the author for sermons
-add_action( "wp", function() {
+add_action( "the_post", function() {
   if ( ctfw_current_content_type() == 'sermon' ) {
+    global $post;
     if ($speakers = get_the_terms( $post->ID, 'ctc_sermon_speaker' )) {
       $speaker = $speakers[0];
       add_filter( "the_author", function( $author ) use ( $speaker ) {
