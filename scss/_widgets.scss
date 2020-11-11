@@ -35,6 +35,28 @@
   padding-bottom: 0;
 }
 
+// repeat above styles with more specific selector to override text widget
+// styles enforced on wordpress.com
+.widget.widget_text .textwidget {
+  ul, ol {
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      border-bottom: 1px dotted #494949;
+      @include rem(margin-bottom, 10px);
+      @include rem(padding-bottom, 10px);
+
+      &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
 .widget_calendar table {
   border-color: #494949;
   width: 100%;
