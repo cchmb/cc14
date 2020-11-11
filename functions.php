@@ -2,6 +2,7 @@
 // Start the engine
 include_once( get_template_directory() . '/lib/init.php' );
 include_once( __DIR__ . '/framework/framework.php' );
+include_once( __DIR__ . '/plugins.php' );
 include_once( __DIR__ . '/widgets.php' );
 
 // Set Localization (do not remove)
