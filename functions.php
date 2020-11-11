@@ -93,9 +93,6 @@ add_filter( 'genesis_author_box_gravatar_size', function( $size ) {
   return '80';
 });
 
-// Remove edit link
-add_filter( 'genesis_edit_post_link', '__return_false' );
-
 // Remove comment form allowed tags
 add_filter( 'comment_form_defaults', function( $defaults ) {
   $defaults['comment_notes_after'] = '';
