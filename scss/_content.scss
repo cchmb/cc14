@@ -219,3 +219,13 @@ li.pingback {
   background-color: #f5f5f5;
   @include rem(padding, 24px);
 }
+
+// contact page
+.contact-info {
+  h4 {
+    font-size: inherit;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 2.6rem;
+  }
+}
