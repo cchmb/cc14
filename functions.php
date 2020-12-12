@@ -200,6 +200,14 @@ add_filter( 'genesis_get_image_default_args', function ( $defaults, $args ) {
   return $defaults;
 }, 10, 2);
 
+// use genesis_get_image for JSON LD thumbnail URL for sermon content.
+add_filter( "ccp_schema_image_urls", function( $image_urls ) {
+  if ( empty($image_urls) && $image = genesis_get_image("format=url") ) {
+     $image_urls = $image;
+  }
+  return $image_urls;
+});
+
 // display speaker as the author for sermons
 add_action( "the_post", function() {
   if ( ctfw_current_content_type() == 'sermon' ) {
